@@ -26,11 +26,14 @@ private guests: guest[] = [];
     });
   } 
    private AddGuest(){    
+    this.newGuest;
         this.partyService.AddGuest(this.newGuest).then(()=>{
            this.newGuest = new GuestViewModel();
            this.partyService.getGest().subscribe(guests=>{
              this.guests = guests;
             });
+          }).catch(()=>{
+            
           });
           
           return true;
