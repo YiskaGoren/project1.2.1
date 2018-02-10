@@ -137,6 +137,17 @@
     },
     {
       "id": 13
+    },
+    {
+      "name": "fdfdfds",
+      "id": 14
+    },
+    {
+      "name": "fds",
+      "Phone": "055555",
+      "guestId": "18",
+      "mailAddress": "vcx@fds.fd",
+      "id": 15
     }
   ],
   "inviter": [
@@ -365,49 +376,19 @@
       }
     ]
   },
-  "manot": [
-    {
-      "id": 1,
-      "idS": 10,
-      "idInviter": 11,
-      "name": "פשטידת ברוקולי"
-    },
-    {
-      "id": 2,
-      "idS": 20,
-      "idInviter": 10,
-      "name": "לזניה"
-    },
-    {
-      "nameMana": "meat",
-      "idInviter": "1",
-      "id": 3
-    }
-  ],
+  "manot": [],
   "sivug": [
     {
       "id": 1,
-      "nameS": "מנה ראשונה"
+      "nameS": "מנה גדולה"
     },
     {
       "id": 2,
-      "name": "מנה עיקרית"
+      "name": "מנה קטנה"
     },
     {
       "id": 3,
-      "name": "מנה אחרונה"
-    },
-    {
-      "id": 4,
-      "name": "סלטים"
-    },
-    {
-      "id": 4,
-      "name": "שתיה"
-    },
-    {
-      "id": 4,
-      "name": "לחמניות"
+      "name": "מנה בינונית"
     }
   ]
 }

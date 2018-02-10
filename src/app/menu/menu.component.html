@@ -1,35 +1,18 @@
-
-<h2>סלטים בחר 6 סלטים מהרשימה</h2>
-<input [(ngModel)]="checkboxValue" (change)="newFunction()" type="checkbox" />
-
-
-<div>
-        <h2>מנות</h2>
-        <ul>
-            <li ng-if="let mana of manot">
-                {{mana.nameMana}}
-             </li>
-        </ul>
-    </div>
-   
-            <label dir="rtl">
-                סוג מנה
-                <select [(ngModel)]="newMana.idS">
-                    <option value="1">מנה גדולה</option>
-                    <option value="2">מנה בינונית</option>
-                    <option value="3">מנה קטנה</option>
-                </select>
-            </label>
-       
-        
-        
-        <label dir="rtl">
-                שם מנה:
-              <input  type="text" [(ngModel)]="newMana.nameMana" name="mana"/>
-              </label>
-              <br/>
-              <br/>
-              <input  type="text" [(ngModel)]="newMana.idInviter" name="idInviter"/>   
-              <button type="button" (click)="AddLine()" >הוסף שורה</button>
-              
-              <button type="button" (click)="AddMana()" >המשך</button>
+<ul class="manot">
+    <li *ngFor="let mana of manot">
+      <a (click)="edit(mana)">
+        <span class="badge">{{ mana.id || -1 }}</span>
+        <span *ngIf="mana!==editMana">{{mana.nameMana}}</span>
+        <input *ngIf="mana===editMana" [(ngModel)]="mana.nameMana">
+        <span *ngIf="mana!==editMana">{{mana.idSivug}}</span>
+        <select *ngIf="mana===editMana" [(ngModel)]="mana.idSivug">
+            <option *ngFor="let mealType of mealTypes" value="{{mealType.id}}">{{mealType.name}}</option>
+        </select>
+      </a>
+     <!-- <button class="delete" title="מחיקת מנה"
+      (click)="delete(mana)">x</button> -->
+    </li>
+  </ul>
+  <button (click)="addNew()">
+    הוספה
+  </button> 

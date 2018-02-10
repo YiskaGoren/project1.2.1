@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PartyService} from '../data/party-service'
 import {Mana} from '../model/mana'
 import {MenuViewModel} from './menu-view-model'
+import { Sivug } from '../model/sivug';
   
 
 @Component({
@@ -11,25 +12,40 @@ import {MenuViewModel} from './menu-view-model'
 })
 export class MenuComponent implements OnInit {
 
-  private newMana: MenuViewModel = new MenuViewModel();
+  private newMana: Mana = new Mana();
   constructor(private partyService:PartyService) { }
 
   private manot: Mana[] = [];
-  ngOnInit() {
-    this.partyService.getMana().subscribe(manot=>{
-      this.manot = manot;
-    });
-  }
+  private mealTypes: Sivug[] = [];
+  editMana: Mana; 
 
+  ngOnInit() {
+    this.GetMealTypes()
+    /*this.partyService.getMana().subscribe(manot=>{
+      this.manot = manot;
+    });*/
+    if(this.manot.length == 0){
+      this.addNew();
+    }
+  }
+  private GetMealTypes(){
+    
+  }
   private AddMana(){    
     this.partyService.AddMana(this.newMana).then(()=>{
-       this.newMana = new MenuViewModel();
-       this.partyService.getGest().subscribe(manot=>{
+       this.newMana = new Mana();
+       this.partyService.getMana().subscribe(manot=>{
          this.manot = manot;
         });
       });
       
       return true;
+  }
+  addNew (){
+    this.manot.push(new Mana());
+  }
+  edit(mana) {
+    this.editMana = mana;
   }
 }
 

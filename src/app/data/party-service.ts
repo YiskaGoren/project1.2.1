@@ -55,7 +55,8 @@ export class PartyService {
             }
 
 
-
+//יש להוסיף לפונקציה סינון לפי ID 
+//של מזמין
             getMana(): Observable<Mana[]> {
                 let manaUrl = this.baseUrl + '/manot';
                 let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
@@ -64,8 +65,11 @@ export class PartyService {
                     let manot: Mana[] = [];
         
                     for (let i = 0; i < DbMana.length; i++) {
-                        let mana = new Mana(dbMana[i].idSivog,dbMana[i].idInviter,dbMana[i].nameMana);
-        
+                        let mana = new Mana();
+                        mana.idmana = dbMana[i].id;
+                        mana.idSivog = dbMana[i].idSivog;
+                        mana.nameMana = dbMana[i].nameMana;
+                        mana.idInviter = dbMana[i].idInviter;        
                         manot.push(mana);
                     }
         
@@ -124,8 +128,8 @@ export class PartyService {
     }
 
 
-    async AddMana(menuVM: MenuViewModel): Promise<void> {
-        let manaUrl = this.baseUrl + '/manot?name=' +  menuVM.nameMana;
+    async AddMana(menuVM: Mana): Promise<void> {
+       /* let manaUrl = this.baseUrl + '/manot?name=' +  menuVM.nameMana;
         let manaUrl2 = this.baseUrl + '/manot?idS=' + menuVM.idSivog;
         let manaUrl3 = this.baseUrl + '/manot?idInviter=' + menuVM.idInviter;
 
@@ -144,6 +148,6 @@ export class PartyService {
                     
             dbMana = await this.httpClient.post<DbMana>(this.baseUrl + '/manot', dbMana).toPromise();
         }
-
+*/
     }
 }
