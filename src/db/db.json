@@ -1,16 +1,5 @@
 {
-  "statusIG": [
-    {
-      "idI": 0,
-      "idG": 1
-    }
-  ],
-  "statusBC": [
-    {
-      "idB": 1,
-      "idC": 0
-    }
-  ],
+  
   "partys": [
     {
       "id": 901,
@@ -38,24 +27,7 @@
     }
   ],
   "guest1": [
-    {
-      "id": 1,
-      "geustId": 23546546,
-      "name": "שרה",
-      "mailAddress": "sari@gmail.com",
-      "Phone": "0527894561",
-      "partyId": 901
-    },
-    {
-      "id": 2,
-      "geustId": 235467546,
-      "name": "רחל",
-      "mailAddress": "  rachel@gmail.com",
-      "Phone": "0525252521",
-      "partyId": [
-        902
-      ]
-    },
+   
     {
       "id": 3,
       "geustId": 235456546,
@@ -244,8 +216,8 @@
   ],
   "meat": {
     "SaladsB": [
-      {
-        "id": 1,
+{
+    "id": 1,
         "name": "סלט כרוב"
       },
       {
@@ -418,10 +390,10 @@
     "addC": [
       {
         "id": 1,
-        "name": "פשטידת ברוקולי"
-      },
-      {
-        "id": 2,
+    "name": "פשטידת ברוקולי"
+  },
+  {
+    "id": 2,
         "name": "פשטידת גבינה"
       }
     ]
@@ -433,7 +405,7 @@
     }
   ],
   "sivug": [
-    {
+  {
       "id": 1,
       "name": "מנה גדולה"
     },
