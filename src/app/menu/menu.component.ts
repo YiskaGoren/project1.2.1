@@ -21,9 +21,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.GetMealTypes()
-    this.partyService.getMana().subscribe(manot=>{
+   /* this.partyService.getMana().subscribe(manot=>{
       this.manot = manot;
-    });
+    });*/
     if(this.manot.length == 0){
       this.addNew();
     }
