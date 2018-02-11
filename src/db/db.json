@@ -148,6 +148,12 @@
       "guestId": "18",
       "mailAddress": "vcx@fds.fd",
       "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
     }
   ],
   "inviter": [
@@ -190,6 +196,50 @@
       "inviterId": "ttttttttttttt",
       "mailAddress": "ttttttttttttt",
       "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "name": "gfd",
+      "Phone": "054578554",
+      "inviterId": "305110579",
+      "mailAddress": "hggf@gfd.gfd",
+      "id": 11
+    },
+    {
+      "name": "gdfh",
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "name": "bfd",
+      "Phone": "0545545",
+      "mailAddress": "ghfdh",
+      "id": 16
     }
   ],
   "meat": {
@@ -376,19 +426,24 @@
       }
     ]
   },
-  "manot": [],
+  "manot": [
+    {
+      "nameMana": "dsa",
+      "id": 1
+    }
+  ],
   "sivug": [
     {
       "id": 1,
-      "nameS": "מנה גדולה"
+      "name": "מנה גדולה"
     },
     {
       "id": 2,
-      "name": "מנה קטנה"
+      "name": "מנה בינונית"
     },
     {
       "id": 3,
-      "name": "מנה בינונית"
+      "name": "מנה קטנה"
     }
   ]
 }

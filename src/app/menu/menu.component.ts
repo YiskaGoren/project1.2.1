@@ -21,15 +21,17 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.GetMealTypes()
-    /*this.partyService.getMana().subscribe(manot=>{
+    this.partyService.getMana().subscribe(manot=>{
       this.manot = manot;
-    });*/
+    });
     if(this.manot.length == 0){
       this.addNew();
     }
   }
   private GetMealTypes(){
-    
+    this.partyService.GetMealTypes().subscribe(mealTypes=>{
+      this.mealTypes = mealTypes;
+    });
   }
   private AddMana(){    
     this.partyService.AddMana(this.newMana).then(()=>{
@@ -46,6 +48,13 @@ export class MenuComponent implements OnInit {
   }
   edit(mana) {
     this.editMana = mana;
+  }
+  update(mana){
+    this.newMana = mana;
+    this.AddMana();
+  }
+  delete(mana){
+
   }
 }
 

@@ -8,9 +8,12 @@
         <select *ngIf="mana===editMana" [(ngModel)]="mana.idSivug">
             <option *ngFor="let mealType of mealTypes" value="{{mealType.id}}">{{mealType.name}}</option>
         </select>
+        <button  *ngIf="mana===editMana" class="" title="שמור"
+        (click)="update(mana)">שמור</button>
       </a>
-     <!-- <button class="delete" title="מחיקת מנה"
-      (click)="delete(mana)">x</button> -->
+  
+     <button class="" title="מחיקת מנה"
+      (click)="delete(mana)">x</button>
     </li>
   </ul>
   <button (click)="addNew()">
