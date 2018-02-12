@@ -13,9 +13,5 @@ export class OpenComponent implements OnInit {
   ngOnInit() {
   }
 
-  inviter()
-  {
   
-  }
-
 }

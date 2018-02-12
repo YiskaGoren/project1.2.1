@@ -12,6 +12,8 @@ import 'rxjs/add/operator/combineLatest';
 import { GuestViewModel } from "../person/guest-view-model";
 import { InviterViewModel } from '../inveiter/inviter-view-model';
 import {MenuViewModel } from '../menu/menu-view-model'
+import { Events } from "../model/events";
+import { DbEvents } from "../../db/dbEvents";
  
 
 @Injectable()
@@ -29,7 +31,7 @@ export class PartyService {
             let guests: guest[] = [];
 
             for (let i = 0; i < dbGuest.length; i++) {
-                let guest1 = new guest((dbGuest[i].guestId).toString(),dbGuest[i].name,dbGuest[i].mailAddress,dbGuest[i].Phone);
+                let guest1 = new guest((dbGuest[i].guestId).toString(),dbGuest[i].name,dbGuest[i].mailAddress,dbGuest[i].Phone,dbGuest[i].idParty);
 
                 guests.push(guest1);
             }
@@ -81,16 +83,43 @@ export class PartyService {
 
 
 
+
+            getEvent(): Observable<Events[]> {
+                let Url = this.baseUrl + '/partys';
+                let dbParty$ = this.httpClient.get<DbEvents[]>(Url);
+        
+              return dbParty$.combineLatest(dbParty$, (dbParty) => {
+                    let partys: Events[] = [];
+        
+                    for (let i = 0; i < DbEvents.length; i++) {
+                        let party = new Events();
+                        party.Id = dbParty[i].id;
+                        party.IdInviter = dbParty[i].idInviter;
+                        party.Name = dbParty[i].name;
+                        party.NumTakePart = dbParty[i].numTackPart;   
+                        party.Place= dbParty[i].place; 
+                        party.MilkMeat= dbParty[i].meatMilk; 
+                        party.DateEvent= dbParty[i].dateEvent;                       
+                        partys.push(party);
+                    }
+        
+                    return partys;
+                })
+            }
+
     async AddGuest(personVM: GuestViewModel): Promise<void> {
         let personUrl = this.baseUrl + '/guest1?name=' + personVM.name;
         let personUrl2 = this.baseUrl + '/guest1?Phone=' + personVM.phone;
         let personUrl3 = this.baseUrl + '/guest1?idperson=' + personVM.idperson;
         let personUrl4 = this.baseUrl + '/guest1?mailAdress=' + personVM.mailAdress;
+        let personUrl5 = this.baseUrl + '/guest1?mailAdress=' + personVM.idParty;
 
         let dbGuests = await this.httpClient.get<DbGuest[]>(personUrl).toPromise();
         let dbGuests2 = await this.httpClient.get<DbGuest[]>(personUrl2).toPromise();
         let dbGuests3 = await this.httpClient.get<DbGuest[]>(personUrl3).toPromise();
         let dbGuests4 = await this.httpClient.get<DbGuest[]>(personUrl4).toPromise();
+        let dbGuests5 = await this.httpClient.get<DbGuest[]>(personUrl5).toPromise();
+
         let dbGuest: DbGuest;
         if (dbGuests.length > 0) {
             dbGuest = dbGuests[0];
@@ -100,6 +129,7 @@ export class PartyService {
             dbGuest.Phone = personVM.phone;
             dbGuest.guestId = personVM.idperson;
             dbGuest.mailAddress = personVM.mailAdress;
+            dbGuest.idParty = personVM.idParty;
             dbGuest = await this.httpClient.post<DbGuest>(this.baseUrl + '/guest1', dbGuest).toPromise();
         }
 
@@ -128,12 +158,49 @@ export class PartyService {
 
     }
 
+
+    async AddEvent(eventM: Events): Promise<void> {
+        let eventNameUrl = this.baseUrl + '/partys?name=' + eventM.Name;
+        let eventPlaceUrl = this.baseUrl + '/partys?place=' + eventM.Place;
+        let eventNumTakePartUrl = this.baseUrl + '/partys?numTackPart=' + eventM.NumTakePart;
+        let eventDateUrl = this.baseUrl + '/partys?date=' + eventM.DateEvent;
+        let eventMilkMeatUrl = this.baseUrl + '/partys?nameMeatMilk=' + eventM.MilkMeat;
+        //let eventIdInviterUrl = 
+
+        let dbEvName = await this.httpClient.get<DbEvents[]>(eventNameUrl).toPromise();
+        let dbEvPlace = await this.httpClient.get<DbEvents[]>(eventPlaceUrl).toPromise();
+        let dbEvNum = await this.httpClient.get<DbEvents[]>(eventNumTakePartUrl).toPromise();
+        let dbEvDate = await this.httpClient.get<DbEvents[]>(eventDateUrl).toPromise();
+        let dbEvMilkMeat = await this.httpClient.get<DbEvents[]>(eventMilkMeatUrl).toPromise();
+       
+        let dbEvent: DbEvents;
+      
+       {
+            dbEvent = new DbEvents();
+            dbEvent.name = eventM.Name;
+            dbEvent.dateEvent = eventM.DateEvent;
+            dbEvent.numTackPart = eventM.NumTakePart;
+            dbEvent.place = eventM.Place;
+            dbEvent.meatMilk = eventM.MilkMeat;
+            dbEvent = await this.httpClient.post<DbEvents>(this.baseUrl + '/partys', dbEvent).toPromise();
+        }
+
+    }
+
     GetMealTypes():Observable<Sivug[]>{
         let url = this.baseUrl + "/sivug";
       // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
         return this.httpClient.get<Sivug[]>(url);
          
     }
+
+    GetParty():Observable<Events[]>{
+        let url = this.baseUrl + "/partys";
+      // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
+        return this.httpClient.get<Events[]>(url);
+         
+    }
+
 
     async AddMana(menuVM: Mana): Promise<void> {
         let dbMana = new DbMana();

@@ -4,6 +4,6 @@ export class GuestViewModel{
     public name:string;
     public mailAdress:string;
     public phone:string;
-    
+    public idParty: number;
   
 }

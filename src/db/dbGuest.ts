@@ -4,4 +4,5 @@ export class DbGuest{
     name: string;
     mailAddress:string;
     Phone:string;
+    idParty:number;
 }

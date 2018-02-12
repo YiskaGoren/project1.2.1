@@ -1,5 +1,4 @@
 {
-  
   "partys": [
     {
       "id": 901,
@@ -7,7 +6,8 @@
       "name": "ערב גיבוש",
       "place": "חזקיה שבתאי 13",
       "numTackPart": 10,
-      "date": "09/02/18"
+      "date": "09/02/18",
+      "idInviter": 10
     },
     {
       "id": 902,
@@ -15,7 +15,8 @@
       "name": "בוקר חברותי",
       "place": "שלום סיון 10",
       "numTackPart": 30,
-      "date": "13/05/18"
+      "date": "13/05/18",
+      "idInviter": 30
     },
     {
       "id": 903,
@@ -23,21 +24,92 @@
       "name": "מסיבת פרישה",
       "place": "הנרקיס 102",
       "numTackPart": 20,
-      "date": "18/06/18"
+      "date": "18/06/18",
+      "idInviter": 40
+    },
+    {
+      "id": 904,
+      "IdBC": 3,
+      "name": "מסיבת גמר",
+      "place": "חזקיה שבתאי 20",
+      "numTackPart": 10,
+      "date": "05/05/18",
+      "idInviter": 10
+    },
+    {
+      "name": "יום הולדת ליהודית 30",
+      "numTackPart": "2",
+      "id": 905
+    },
+    {
+      "name": "יום הולדת יסכה 22",
+      "numTackPart": "3",
+      "id": 906
+    },
+    {
+      "name": "שם מסיבה",
+      "numTackPart": "מספר מוז",
+      "id": 907
+    },
+    {
+      "name": "שם מסיבה",
+      "numTackPart": "4",
+      "id": 908
+    },
+    {
+      "name": "עעעע",
+      "numTackPart": "444",
+      "meatMilk": "milkMeat",
+      "id": 909
+    },
+    {
+      "name": "טטטטט",
+      "numTackPart": "44",
+      "meatMilk": "חלבי",
+      "id": 910
+    },
+    {
+      "name": "מסיבת סידור",
+      "numTackPart": "50",
+      "meatMilk": "בשרי",
+      "id": 911
+    },
+    {
+      "name": "עעעיעועןע",
+      "numTackPart": "555",
+      "place": "אאאאאאאא",
+      "meatMilk": "חלבי",
+      "id": 912
+    },
+    {
+      "name": "jhgjh",
+      "numTackPart": "5",
+      "place": "ewtert",
+      "id": 913
+    },
+    {
+      "name": "trg",
+      "numTackPart": "3",
+      "place": "wetr",
+      "meatMilk": "חלבי",
+      "id": 914
+    },
+    {
+      "name": "777777777777777",
+      "dateEvent": "2018-02-09",
+      "numTackPart": "7",
+      "place": "77777777777",
+      "id": 915
     }
   ],
   "guest1": [
-   
     {
       "id": 3,
       "geustId": 235456546,
       "name": "יהודית",
       "mailAddress": "yudithershler@gmail.com",
       "Phone": "0504141534",
-      "partyId": [
-        905,
-        906
-      ]
+      "partyId": 2
     },
     {
       "id": 4,
@@ -53,80 +125,9 @@
       "name": "הדר",
       "mailAddress": "hadar@gmail.com",
       "Phone": "0506565658",
-      "partyId": [
-        903,
-        904
-      ]
-    },
-    {
-      "name": "jjjjjjjjjjjjjjj",
-      "Phone": "0546550477",
-      "guestId": "208348250",
-      "mailAddress": "yiska@outlook.com",
-      "id": 6
-    },
-    {
-      "name": "יייייהיחיה",
-      "Phone": "60556",
-      "guestId": "8208454",
-      "mailAddress": "נמהנה",
-      "id": 7
-    },
-    {
-      "name": "lljhl",
-      "Phone": "045065446",
-      "guestId": "506565",
-      "mailAddress": "kjnkjn",
-      "id": 8
-    },
-    {
-      "name": "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
-      "Phone": "66666666666666",
-      "guestId": "000000000000000000",
-      "mailAddress": "5555555555555",
-      "id": 9
-    },
-    {
-      "name": "jhgjhg",
-      "Phone": "0545454",
-      "guestId": "5106546",
-      "mailAddress": "kjbnkj",
-      "id": 10
-    },
-    {
-      "name": "ddddd",
-      "Phone": "ddddddddddd",
-      "guestId": "ddddddd",
-      "mailAddress": "ddddddddddd",
-      "id": 11
-    },
-    {
-      "name": "fdgf",
-      "Phone": "0210",
-      "guestId": "4848",
-      "mailAddress": "ttretgr",
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "name": "fdfdfds",
-      "id": 14
-    },
-    {
-      "name": "fds",
-      "Phone": "055555",
-      "guestId": "18",
-      "mailAddress": "vcx@fds.fd",
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
+      "partyId":5
     }
+    
   ],
   "inviter": [
     {
@@ -161,63 +162,12 @@
         902,
         902
       ]
-    },
-    {
-      "name": "ttttttttttttt",
-      "Phone": "ttttttttttttt",
-      "inviterId": "ttttttttttttt",
-      "mailAddress": "ttttttttttttt",
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "name": "gfd",
-      "Phone": "054578554",
-      "inviterId": "305110579",
-      "mailAddress": "hggf@gfd.gfd",
-      "id": 11
-    },
-    {
-      "name": "gdfh",
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "name": "bfd",
-      "Phone": "0545545",
-      "mailAddress": "ghfdh",
-      "id": 16
     }
   ],
   "meat": {
     "SaladsB": [
-{
-    "id": 1,
+      {
+        "id": 1,
         "name": "סלט כרוב"
       },
       {
@@ -390,22 +340,26 @@
     "addC": [
       {
         "id": 1,
-    "name": "פשטידת ברוקולי"
-  },
-  {
-    "id": 2,
+        "name": "פשטידת ברוקולי"
+      },
+      {
+        "id": 2,
         "name": "פשטידת גבינה"
       }
     ]
   },
   "manot": [
     {
-      "nameMana": "dsa",
+      "nameMana": "פשטידת גבינה",
       "id": 1
+    },
+    {
+      "nameMana": "oooo",
+      "id": 2
     }
   ],
   "sivug": [
-  {
+    {
       "id": 1,
       "name": "מנה גדולה"
     },

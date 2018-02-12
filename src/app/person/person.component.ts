@@ -3,6 +3,8 @@ import { GuestViewModel } from './guest-view-model';
 import { PartyService } from '../data/party-service';
 import { guest } from '../model/guest';
 import { HtmlParser } from '@angular/compiler';
+import { Events } from '../model/events';
+
 
 
 @Component({
@@ -16,11 +18,16 @@ export class PersonComponent implements OnInit {
 private newGuest: GuestViewModel = new GuestViewModel();
 private guests: guest[] = [];
 
+ private partyType: Events[] = [];
+ 
   constructor(private partyService: PartyService) {
     
    }
 
   ngOnInit() {
+     this.GetParty();
+
+
    this.partyService.getGest().subscribe(guests=>{
       this.guests = guests;
     });
@@ -38,5 +45,14 @@ private guests: guest[] = [];
           
           return true;
       }
-      //
+
+
+      private GetParty(){
+        this.partyService.GetParty().subscribe(partyType=>{
+          this.partyType = partyType;
+        });
+      }
+
+     
+      
 }
