@@ -4,6 +4,6 @@ export class InviterViewModel{
     public name:string;
     public mailAdress:string;
     public phone:string;
-   
+    public tz:string;
   
 }
