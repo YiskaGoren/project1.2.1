@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {InviterViewModel} from './inviter-view-model'
+import {People} from '../model/people';
 import { Inviter } from '../model/inviter';
 import {PartyService} from '../data/party-service';
 import {Router} from "@angular/router";
@@ -10,8 +10,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./inveiter.component.css']
 })
 export class InveiterComponent implements OnInit {
-  private newInviter: InviterViewModel = new InviterViewModel();
-  private inviters: Inviter[] = [];
+  private newInviter: People = new People();
+  private inviters: People[] = [];
   private errorAdd: boolean = false;
   private message: string = '';
   
@@ -26,14 +26,14 @@ export class InveiterComponent implements OnInit {
 
   private AddInviter(){    
    
-    if(!this.newInviter.name || !this.newInviter.id || !this.newInviter.mailAdress || !this.newInviter.phone){
+    if(!this.newInviter.name || !this.newInviter.peopleId || !this.newInviter.mailAddress || !this.newInviter.phone){
       this.errorAdd = true;
       this.message = 'נא מלא את כל השדות';
       return false;
     }
     
     this.partyService.AddInviter(this.newInviter).then(()=>{
-       this.newInviter = new InviterViewModel();
+       this.newInviter = new People();
        this.partyService.getInviter().subscribe(inviters=>{
          this.inviters = inviters;
         });

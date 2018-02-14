@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core/";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
-import { guest } from '../model/guest';
+import { Guest } from '../model/guest';
 import { Inviter } from '../model/inviter';
 import { Mana } from '../model/mana';
 import { Sivug } from '../model/sivug';
@@ -14,7 +14,8 @@ import { InviterViewModel } from '../inveiter/inviter-view-model';
 import {MenuViewModel } from '../menu/menu-view-model'
 import { Events } from "../model/events";
 import { DbEvents } from "../../db/dbEvents";
- 
+import { People } from "../model/people";
+ import {DbPeople} from '../../db/dbPeople';
 
 @Injectable()
 export class PartyService {
@@ -22,39 +23,77 @@ export class PartyService {
 
     baseUrl: string = 'http://localhost:3000';
 
-    getGest(): Observable<guest[]> {
+   /* getEvent(): Observable<Events[]> {
+        let Url = this.baseUrl + '/partys';
+        let dbParty$ = this.httpClient.get<DbEvents[]>(Url);
+
+      return dbParty$.combineLatest(dbParty$, (dbParty) => {
+            let partys: Events[] = [];
+
+            for (let i = 0; i < DbEvents.length; i++) {
+                let party = new Events();
+                party.Id = dbParty[i].id;
+                party.IdInviter = dbParty[i].idInviter;
+                party.Name = dbParty[i].name;
+                party.NumTakePart = dbParty[i].numTackPart;   
+                party.Place= dbParty[i].place; 
+                party.MilkMeat= dbParty[i].meatMilk; 
+                party.DateEvent= dbParty[i].dateEvent;                       
+                partys.push(party);
+            }
+
+            return partys;
+        })
+    }*/
+
+
+
+    getGest(): Observable<People[]> {
 // מהserverהפונקציה מחזירה את טבלת מוזמנים
-        let guestsUrl = this.baseUrl + '/guest1';
-        let dbGuests$ = this.httpClient.get<DbGuest[]>(guestsUrl);
+        let guestsUrl = this.baseUrl + '/people';
+        let dbGuests$ = this.httpClient.get<DbPeople[]>(guestsUrl);
 
       return dbGuests$.combineLatest(dbGuests$, (dbGuest) => {
-            let guests: guest[] = [];
+            let guests: People[] = [];
 
-            for (let i = 0; i < dbGuest.length; i++) {
-                let guest1 = new guest((dbGuest[i].guestId).toString(),dbGuest[i].name,dbGuest[i].mailAddress,dbGuest[i].Phone,dbGuest[i].idParty);
-
-                guests.push(guest1);
+            for (let i = 0; i < DbEvents.length; i++) {
+                let people = new People();
+                people.id=dbGuest[i].id;
+                people.name=dbGuest[i].name;
+                people.peopleId=dbGuest[i].peopleId;
+                people.mailAddress=dbGuest[i].mailAddress;
+                people.phone=dbGuest[i].phone;               
+                guests.push(people);
             }
 
             return guests;
+
+
+
         })
     }
-    getInviter(): Observable<Inviter[]> {
-        // מהserverהפונקציה מחזירה את טבלת מוזמנים
-                let inviterUrl = this.baseUrl + '/inviter';
-                let dbInviters$ = this.httpClient.get<DbInviter[]>(inviterUrl);
-        
-              return dbInviters$.combineLatest(dbInviters$, (dbInviter) => {
-                    let inviters: Inviter[] = [];
-        
-                    for (let i = 0; i < DbInviter.length; i++) {
-                        let inviter = new Inviter((dbInviter[i].inviterId).toString(),dbInviter[i].name,dbInviter[i].mailAddress,dbInviter[i].Phone);
-        
-                        inviters.push(inviter);
-                    }
-        
-                    return inviters;
-                })
+    getInviter(): Observable<People[]> {
+        let guestsUrl = this.baseUrl + '/people';
+        let dbGuests$ = this.httpClient.get<DbPeople[]>(guestsUrl);
+
+      return dbGuests$.combineLatest(dbGuests$, (dbGuest) => {
+            let guests: People[] = [];
+
+            for (let i = 0; i < DbEvents.length; i++) {
+                let people = new People();
+                people.id=dbGuest[i].id;
+                people.name=dbGuest[i].name;
+                people.peopleId=dbGuest[i].peopleId;
+                people.mailAddress=dbGuest[i].mailAddress;
+                people.phone=dbGuest[i].phone;               
+                guests.push(people);
+            }
+
+            return guests;
+
+
+
+        })
             }
 
 
@@ -107,53 +146,52 @@ export class PartyService {
                 })
             }
 
-    async AddGuest(personVM: GuestViewModel): Promise<void> {
+    async AddGuest(personVM: People): Promise<void> {
         let personUrl = this.baseUrl + '/guest1?name=' + personVM.name;
         let personUrl2 = this.baseUrl + '/guest1?Phone=' + personVM.phone;
-        let personUrl3 = this.baseUrl + '/guest1?idperson=' + personVM.idperson;
-        let personUrl4 = this.baseUrl + '/guest1?mailAdress=' + personVM.mailAdress;
-        let personUrl5 = this.baseUrl + '/guest1?mailAdress=' + personVM.idParty;
+        let personUrl3 = this.baseUrl + '/guest1?idperson=' + personVM.peopleId;
+        let personUrl4 = this.baseUrl + '/guest1?mailAdress=' + personVM.mailAddress;
+        
+        let dbGuests = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
+        let dbGuests2 = await this.httpClient.get<DbPeople[]>(personUrl2).toPromise();
+        let dbGuests3 = await this.httpClient.get<DbPeople[]>(personUrl3).toPromise();
+        let dbGuests4 = await this.httpClient.get<DbPeople[]>(personUrl4).toPromise();
+       
 
-        let dbGuests = await this.httpClient.get<DbGuest[]>(personUrl).toPromise();
-        let dbGuests2 = await this.httpClient.get<DbGuest[]>(personUrl2).toPromise();
-        let dbGuests3 = await this.httpClient.get<DbGuest[]>(personUrl3).toPromise();
-        let dbGuests4 = await this.httpClient.get<DbGuest[]>(personUrl4).toPromise();
-        let dbGuests5 = await this.httpClient.get<DbGuest[]>(personUrl5).toPromise();
-
-        let dbGuest: DbGuest;
+        let dbGuest: DbPeople;
         if (dbGuests.length > 0) {
             dbGuest = dbGuests[0];
         } else {
-            dbGuest = new DbGuest();
+            dbGuest = new DbPeople();
             dbGuest.name = personVM.name;
-            dbGuest.Phone = personVM.phone;
-            dbGuest.guestId = personVM.idperson;
-            dbGuest.mailAddress = personVM.mailAdress;
-            dbGuest.idParty = personVM.idParty;
-            dbGuest = await this.httpClient.post<DbGuest>(this.baseUrl + '/guest1', dbGuest).toPromise();
+            dbGuest.phone = personVM.phone;
+            dbGuest.peopleId= personVM.peopleId;
+            dbGuest.mailAddress = personVM.mailAddress;
+            
+            dbGuest = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbGuest).toPromise();
         }
 
     }
-    async AddInviter(personVM: InviterViewModel): Promise<void> {
+    async AddInviter(personVM: People): Promise<void> {
         let personUrl = this.baseUrl + '/inviter?name=' + personVM.name;
         let personUrl2 = this.baseUrl + '/inviter?Phone=' + personVM.phone;
         let personUrl3 = this.baseUrl + '/inviter?id=' + personVM.id;
-        let personUrl4 = this.baseUrl + '/inviter?mailAdress=' + personVM.mailAdress;
+        let personUrl4 = this.baseUrl + '/inviter?mailAdress=' + personVM.mailAddress;
 
-        let dbInviters = await this.httpClient.get<DbInviter[]>(personUrl).toPromise();
-        let dbInviters2 = await this.httpClient.get<DbInviter[]>(personUrl2).toPromise();
-        let dbInviters3 = await this.httpClient.get<DbInviter[]>(personUrl3).toPromise();
-        let dbInviters4 = await this.httpClient.get<DbInviter[]>(personUrl4).toPromise();
-        let dbInviter: DbInviter;
+        let dbInviters = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
+        let dbInviters2 = await this.httpClient.get<DbPeople[]>(personUrl2).toPromise();
+        let dbInviters3 = await this.httpClient.get<DbPeople[]>(personUrl3).toPromise();
+        let dbInviters4 = await this.httpClient.get<DbPeople[]>(personUrl4).toPromise();
+        let dbInviter: DbPeople;
         if (dbInviters.length > 0) {
             dbInviter = dbInviters[0];
         } else {
-            dbInviter = new DbInviter();
+            dbInviter = new DbPeople();
             dbInviter.name = personVM.name;
-            dbInviter.Phone = personVM.phone;
-            dbInviter.inviterId = personVM.id;
-            dbInviter.mailAddress = personVM.mailAdress;
-            dbInviter = await this.httpClient.post<DbInviter>(this.baseUrl + '/inviter', dbInviter).toPromise();
+            dbInviter.phone = personVM.phone;
+            dbInviter.peopleId = personVM.peopleId;
+            dbInviter.mailAddress = personVM.mailAddress;
+            dbInviter = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbInviter).toPromise();
         }
 
     }

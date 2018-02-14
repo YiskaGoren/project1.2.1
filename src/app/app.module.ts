@@ -15,7 +15,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { PartyService } from './data/party-service';
 import { MenuComponent } from './menu/menu.component';
 import { EventsComponent } from './events/events.component';
-import { ViewguestComponent } from './viewguest/viewguest.component'
+import { ViewguestComponent } from './viewguest/viewguest.component';
+
 
 
 
@@ -37,7 +38,8 @@ const appRoutes: Routes=[
     NavbarComponent,
     MenuComponent,
     EventsComponent,
-    ViewguestComponent
+    ViewguestComponent,
+
   ],
   imports: [
     BrowserModule,

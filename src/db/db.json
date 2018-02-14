@@ -1,10 +1,9 @@
 {
-   "partisipation":
-  [
+  "partisipation": [
     {
-      "id":1,
-      "idGuest":1,
-      "idParty":1
+      "id": 1,
+      "idGuest": 1,
+      "idParty": 1
     }
   ],
   "partys": [
@@ -14,8 +13,7 @@
       "place": "חזקיה שבתאי 13",
       "numTackPart": 10,
       "date": "09/02/18",
-      "idinviter":"1"
-
+      "idinviter": "1"
     },
     {
       "id": 2,
@@ -30,9 +28,20 @@
       "place": "הנרקיס 102",
       "numTackPart": 20,
       "date": "18/06/18"
+    },
+    {
+      "name": "ערב הורים",
+      "dateEvent": "2018-02-28",
+      "numTackPart": "50",
+      "place": "הירקון 90",
+      "meatMilk": "חלבי",
+      "id": 4
+    },
+    {
+      "id": 5
     }
   ],
-  "peaple": [
+  "people": [
     {
       "id": 1,
       "peapleId": 235456546,
@@ -44,13 +53,13 @@
   "guest": [
     {
       "id": 1,
-     "idPeapleTable": 1
+      "idPeapleTable": 1
     }
   ],
   "inviter": [
     {
       "id": 1,
-     "idPeapleTable": 1
+      "idPeapleTable": 1
     }
   ],
   "manot": [

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { GuestViewModel } from './guest-view-model';
 import { PartyService } from '../data/party-service';
-import { guest } from '../model/guest';
+import { Guest } from '../model/guest';
 import { HtmlParser } from '@angular/compiler';
 import { Events } from '../model/events';
+import { People } from '../model/people';
 
 
 
@@ -15,8 +16,8 @@ import { Events } from '../model/events';
 
 export class PersonComponent implements OnInit {
 
-private newGuest: GuestViewModel = new GuestViewModel();
-private guests: guest[] = [];
+private newGuest: People = new People();
+private guests: People[] = [];
 
  private partyType: Events[] = [];
  
@@ -35,7 +36,7 @@ private guests: guest[] = [];
    private AddGuest(){    
     this.newGuest;
         this.partyService.AddGuest(this.newGuest).then(()=>{
-           this.newGuest = new GuestViewModel();
+           this.newGuest = new People();
            this.partyService.getGest().subscribe(guests=>{
              this.guests = guests;
             });
