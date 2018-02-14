@@ -15,13 +15,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { PartyService } from './data/party-service';
 import { MenuComponent } from './menu/menu.component';
 import { EventsComponent } from './events/events.component';
+import { ViewguestComponent } from './viewguest/viewguest.component'
+
+
 
 const appRoutes: Routes=[
   {path:'',component:OpenComponent},
   {path:'person' , component:PersonComponent},
   {path:'inveiter' , component:InveiterComponent},
   {path:'events' , component:EventsComponent},
-  {path:'menu' , component:MenuComponent}
+  {path:'menu' , component:MenuComponent},
+  {path:'viewguest' , component:ViewguestComponent}
 ]
 
 @NgModule({
@@ -32,7 +36,8 @@ const appRoutes: Routes=[
     InveiterComponent,
     NavbarComponent,
     MenuComponent,
-    EventsComponent
+    EventsComponent,
+    ViewguestComponent
   ],
   imports: [
     BrowserModule,

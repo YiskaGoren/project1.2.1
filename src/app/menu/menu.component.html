@@ -1,7 +1,7 @@
 <ul class="manot">
     <li *ngFor="let mana of manot">
       <a (click)="edit(mana)">
-        <span class="badge">{{ mana.id || -1 }}</span>
+        <span class="badge">{{ mana.id }}</span>
         <span *ngIf="mana!==editMana">{{mana.nameMana}}</span>
         <input *ngIf="mana===editMana" [(ngModel)]="mana.nameMana">
         <span *ngIf="mana!==editMana">{{mana.idSivug}}</span>
