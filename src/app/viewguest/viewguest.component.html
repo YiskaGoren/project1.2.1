@@ -1,0 +1,4 @@
+<select [(ngModel)]="partyType.Id">
+  <option *ngFor="let party of partyType" value="{{party.id}}">{{party.name}}</option>
+</select>
+<label id="sl" >בחר אירוע כדי לראות את המשתתפים</label>
