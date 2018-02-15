@@ -3,7 +3,7 @@ import {People} from '../model/people';
 import { Inviter } from '../model/inviter';
 import {PartyService} from '../data/party-service';
 import {Router} from "@angular/router";
-import { InviterViewModel } from './inviter-view-model';
+
 
 @Component({
   selector: 'app-inveiter',
@@ -11,7 +11,7 @@ import { InviterViewModel } from './inviter-view-model';
   styleUrls: ['./inveiter.component.css']
 })
 export class InveiterComponent implements OnInit {
-  private newInviter: InviterViewModel = new InviterViewModel();
+  private newInviter: People = new People();
 
   private errorAdd: boolean = false;
   private message: string = '';
@@ -25,7 +25,7 @@ export class InveiterComponent implements OnInit {
 
   private AddInviter(){    
    
-    if(!this.newInviter.name || !this.newInviter.tz || !this.newInviter.mailAdress || !this.newInviter.phone){
+    if(!this.newInviter.name || !this.newInviter.peopleId || !this.newInviter.mailAddress || !this.newInviter.phone){
       this.errorAdd = true;
       this.message = 'נא מלא את כל השדות';
       return false;
