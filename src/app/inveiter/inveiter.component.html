@@ -10,13 +10,13 @@
     <p dir="rtl">
         <label>
         תעודת זהות:
-          <input type="text" required [(ngModel)]="newInviter.tz" name="tz"/>
+          <input type="text" required [(ngModel)]="newInviter.peopleId" name="peopleId"/>
         </label>
         </p >
     <p dir="rtl">
     <label>
      כתובת מייל:
-      <input type="text" required [(ngModel)]="newInviter.mailAdress" name="mailAdress"/>
+      <input type="text" required [(ngModel)]="newInviter.mailAddress" name="mailAddress"/>
     </label>
     </p >
     <p dir="rtl">
@@ -27,7 +27,8 @@
     <br/>
     <br/>
     <button type="button" (click)="AddInviter()" >המשך</button>
-
+    
+   
 
 
     <button type="button" routerLink="/events" >להזמנת אירוע</button>

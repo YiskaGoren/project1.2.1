@@ -10,7 +10,7 @@ import { DbInviter } from '../../db/dbInviter';
 import { DbMana } from '../../db/dbMana';
 import 'rxjs/add/operator/combineLatest';
 import { GuestViewModel } from "../person/guest-view-model";
-import { InviterViewModel } from '../inveiter/inviter-view-model';
+
 import {MenuViewModel } from '../menu/menu-view-model'
 import { Events } from "../model/events";
 import { DbEvents } from "../../db/dbEvents";
@@ -147,17 +147,17 @@ export class PartyService {
             }
 
     async AddGuest(personVM: People): Promise<void> {
-        let personUrl = this.baseUrl + '/guest1?name=' + personVM.name;
-        let personUrl2 = this.baseUrl + '/guest1?Phone=' + personVM.phone;
-        let personUrl3 = this.baseUrl + '/guest1?idperson=' + personVM.peopleId;
-        let personUrl4 = this.baseUrl + '/guest1?mailAdress=' + personVM.mailAddress;
+        let personUrl = this.baseUrl + '/people?name=' + personVM.name;
+        let personUrl2 = this.baseUrl + '/people?phone=' + personVM.phone;
+        let personUrl3 = this.baseUrl + '/people?tz=' + personVM.peopleId;
+        let personUrl4 = this.baseUrl + '/people?mailAddress=' + personVM.mailAddress;
         
         let dbGuests = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
         let dbGuests2 = await this.httpClient.get<DbPeople[]>(personUrl2).toPromise();
         let dbGuests3 = await this.httpClient.get<DbPeople[]>(personUrl3).toPromise();
         let dbGuests4 = await this.httpClient.get<DbPeople[]>(personUrl4).toPromise();
        
-
+      
         let dbGuest: DbPeople;
         if (dbGuests.length > 0) {
             dbGuest = dbGuests[0];
@@ -172,8 +172,8 @@ export class PartyService {
         }
 
     }
-    async AddInviter(personVM: InviterViewModel): Promise<void> {
-        let personUrl = this.baseUrl + '/people?tz=' + personVM.tz;
+    async AddInviter(personVM: People): Promise<void> {
+        let personUrl = this.baseUrl + '/people?tz=' + personVM.peopleId;
       
         let dbPeaples = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
         let dbInviter: DbInviter= new DbInviter();
@@ -185,8 +185,8 @@ export class PartyService {
             let dbPeaple = new DbPeople();
             dbPeaple.name = personVM.name;
             dbPeaple.phone = personVM.phone;
-            dbPeaple.mailAddress = personVM.mailAdress;
-            dbPeaple.tz = personVM.tz;
+            dbPeaple.mailAddress = personVM.mailAddress;
+            dbPeaple.tz = personVM.peopleId;
             dbPeaple = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbPeaple).toPromise();
             dbInviter.idPeapleTable = dbPeaple.id;            
             dbInviter = await this.httpClient.post<DbInviter>(this.baseUrl + '/inviter', dbInviter).toPromise();
