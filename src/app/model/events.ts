@@ -10,7 +10,7 @@ export class Events{
 
     private idInviter : number
     public get IdInviter() : number {
-        return this.id;
+        return this.idInviter;
     }
     public set IdInviter(v : number) {
         this.idInviter = v;

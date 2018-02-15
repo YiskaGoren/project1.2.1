@@ -12,16 +12,14 @@ import { InviterViewModel } from './inviter-view-model';
 })
 export class InveiterComponent implements OnInit {
   private newInviter: InviterViewModel = new InviterViewModel();
-  private inviters: People[] = [];
+
   private errorAdd: boolean = false;
   private message: string = '';
   
   constructor(private partyService: PartyService, private router: Router) { }
 
   ngOnInit() {
-    this.partyService.getInviter().subscribe(inviter=>{
-      this.inviters = inviter;
-    });
+  
   }
 
 
@@ -34,11 +32,7 @@ export class InveiterComponent implements OnInit {
     }
     
     this.partyService.AddInviter(this.newInviter).then(()=>{
-      
-       this.partyService.getInviter().subscribe(inviters=>{
-         this.inviters = inviters;
-        });
-        this.router.navigate(['menu']); 
+        this.router.navigate(['events']); 
       });
       
       return true;

@@ -22,7 +22,8 @@ export class PartyService {
     constructor(private httpClient: HttpClient) { }
 
     baseUrl: string = 'http://localhost:3000';
-
+    currentInviterId:number;
+    currentPartyId:number;
    /* getEvent(): Observable<Events[]> {
         let Url = this.baseUrl + '/partys';
         let dbParty$ = this.httpClient.get<DbEvents[]>(Url);
@@ -108,10 +109,10 @@ export class PartyService {
         
                     for (let i = 0; i < DbMana.length; i++) {
                         let mana = new Mana();
-                        mana.idmana = dbMana[i].id;
+                        mana.id = dbMana[i].id;
                         mana.idSivog = dbMana[i].idSivog;
-                        mana.nameMana = dbMana[i].nameMana;
-                        mana.idInviter = dbMana[i].idInviter;        
+                        mana.name = dbMana[i].nameMana;
+                        mana.idParty = dbMana[i].idParty;        
                         manot.push(mana);
                     }
         
@@ -191,6 +192,7 @@ export class PartyService {
             dbInviter.idPeapleTable = dbPeaple.id;            
             dbInviter = await this.httpClient.post<DbInviter>(this.baseUrl + '/inviter', dbInviter).toPromise();
         }
+        this.currentInviterId = dbInviter.id;
     }
 
 
@@ -209,24 +211,22 @@ export class PartyService {
         let dbEvMilkMeat = await this.httpClient.get<DbEvents[]>(eventMilkMeatUrl).toPromise();
        
         let dbEvent: DbEvents;
-      
-       {
-            dbEvent = new DbEvents();
-            dbEvent.name = eventM.Name;
-            dbEvent.dateEvent = eventM.DateEvent;
-            dbEvent.numTackPart = eventM.NumTakePart;
-            dbEvent.place = eventM.Place;
-            dbEvent.meatMilk = eventM.MilkMeat;
-            dbEvent = await this.httpClient.post<DbEvents>(this.baseUrl + '/partys', dbEvent).toPromise();
-        }
+             
+        dbEvent = new DbEvents();
+        dbEvent.name = eventM.Name;
+        dbEvent.dateEvent = eventM.DateEvent;
+        dbEvent.numTackPart = eventM.NumTakePart;
+        dbEvent.place = eventM.Place;
+        dbEvent.meatMilk = eventM.MilkMeat;
+        dbEvent.idInviter = eventM.IdInviter;
+        dbEvent = await this.httpClient.post<DbEvents>(this.baseUrl + '/partys', dbEvent).toPromise();
+        this.currentPartyId = dbEvent.id;
 
     }
 
     GetMealTypes():Observable<Sivug[]>{
         let url = this.baseUrl + "/sivug";
-      // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
-        return this.httpClient.get<Sivug[]>(url);
-         
+        return this.httpClient.get<Sivug[]>(url);        
     }
 
     GetParty():Observable<Events[]>{
@@ -237,12 +237,18 @@ export class PartyService {
     }
 
 
-    async AddMana(menuVM: Mana): Promise<void> {
-        let dbMana = new DbMana();
-        dbMana.nameMana = menuVM.nameMana;
-        dbMana.id = menuVM.idmana;
-        dbMana.idInviter = menuVM.idInviter;
-        dbMana.idSivog = menuVM.idSivog;
-        await this.httpClient.post<DbInviter>(this.baseUrl + '/manot', dbMana).toPromise();
+    async AddManot(manot: Mana[]): Promise<void> {
+
+        let dbManot :DbMana[] = [];
+        manot.forEach(function(item, index){
+            let dbMana = new DbMana();
+            dbMana.nameMana = item.name;
+            dbMana.id = item.id;
+            dbMana.idParty = item.idParty;
+            dbMana.idSivog = item.idSivog;
+            dbManot.push(dbMana);
+        });
+        
+        await this.httpClient.post<DbMana[]>(this.baseUrl + '/manot', dbManot).toPromise();
     }
 }

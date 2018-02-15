@@ -1,24 +1,33 @@
-<ul class="manot">
-    <li *ngFor="let mana of manot">
-      <a (click)="edit(mana)">
-        <span class="badge">{{ mana.id }}</span>
-        <span *ngIf="mana!==editMana">{{mana.nameMana}}</span>
-        <input *ngIf="mana===editMana" [(ngModel)]="mana.nameMana">
-        <span *ngIf="mana!==editMana">{{mana.idSivug}}</span>
 
-        <select *ngIf="mana===editMana" [(ngModel)]="mana.idSivug">
+
+
+
+    
+   
+  
+
+
+<ul class="manot">
+
+    <li *ngFor="let mana of manot">
+       <span>{{index}}</span>
+        <input type="text" [(ngModel)]="mana.name">
+
+        <select [(ngModel)]="mana.idSivug">
             <option *ngFor="let mealType of mealTypes" value="{{mealType.id}}">{{mealType.name}}</option>
         </select>
-
-        
-        <button  *ngIf="mana===editMana" class="" title="שמור"
-        (click)="update(mana)">שמור</button>
-      </a>
+     
   
      <button class="" title="מחיקת מנה"
-      (click)="delete(mana)">x</button>
+      (click)="delete()">x</button>
     </li>
   </ul>
+
   <button (click)="addNew()">
     הוספה
   </button> 
+  <div class="container">
+      
+                
+    <button type="button" class="btn btn-info btn-block" (click)="AddManot()"> סיום התהליך</button>
+  </div>

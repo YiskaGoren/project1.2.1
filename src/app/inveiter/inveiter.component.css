@@ -1,0 +1,11 @@
+input {
+    font-size: 100%;
+    margin-bottom:4px;
+    width: 11em;
+  }
+  
+  .inviter input {
+    position: relative;
+    top: -3px;
+    width: 12em;
+  }

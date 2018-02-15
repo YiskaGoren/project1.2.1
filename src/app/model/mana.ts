@@ -1,8 +1,7 @@
 
 export class Mana {
-    public idSivog:number;
-    public idInviter:number;
-    public nameMana: string;
-    public idmana:number;
-    
+    public id:number;
+    public idParty:number;
+    public name: string;  
+    public idSivog:number;  
 }

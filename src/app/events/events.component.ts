@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Events } from '../model/events';
-import{PartyService} from '../data/party-service';
+import {PartyService} from '../data/party-service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-events',
@@ -10,21 +11,16 @@ import{PartyService} from '../data/party-service';
 
 export class EventsComponent implements OnInit {
   private newEvents: Events = new Events();
-  private eventsArr: Events[] = []; 
-  constructor(private partyService: PartyService) { }
+ 
+  constructor(private partyService: PartyService, private router: Router) { }
 
   ngOnInit() {
-    this.partyService.getEvent().subscribe(events=>{
-      this.eventsArr = events;
-    });
+    this.newEvents.IdInviter = this.partyService.currentInviterId;
   }
 
   private AddEvent(){    
     this.partyService.AddEvent(this.newEvents).then(()=>{
-       this.newEvents = new Events();
-       this.partyService.getEvent().subscribe(partys=>{
-         this.eventsArr = partys;
-        });
+      this.router.navigate(['menu']); 
       });
       
       return true;
