@@ -148,29 +148,47 @@ export class PartyService {
             }
 
     async AddGuest(personVM: People): Promise<void> {
-        let personUrl = this.baseUrl + '/people?name=' + personVM.name;
-        let personUrl2 = this.baseUrl + '/people?phone=' + personVM.phone;
-        let personUrl3 = this.baseUrl + '/people?tz=' + personVM.peopleId;
-        let personUrl4 = this.baseUrl + '/people?mailAddress=' + personVM.mailAddress;
+        // let personUrl = this.baseUrl + '/people?name=' + personVM.name;
+        // let personUrl2 = this.baseUrl + '/people?phone=' + personVM.phone;
+        // let personUrl3 = this.baseUrl + '/people?tz=' + personVM.peopleId;
+        // let personUrl4 = this.baseUrl + '/people?mailAddress=' + personVM.mailAddress;
         
-        let dbGuests = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
-        let dbGuests2 = await this.httpClient.get<DbPeople[]>(personUrl2).toPromise();
-        let dbGuests3 = await this.httpClient.get<DbPeople[]>(personUrl3).toPromise();
-        let dbGuests4 = await this.httpClient.get<DbPeople[]>(personUrl4).toPromise();
+        // let dbGuests = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
+        // let dbGuests2 = await this.httpClient.get<DbPeople[]>(personUrl2).toPromise();
+        // let dbGuests3 = await this.httpClient.get<DbPeople[]>(personUrl3).toPromise();
+        // let dbGuests4 = await this.httpClient.get<DbPeople[]>(personUrl4).toPromise();
        
       
-        let dbGuest: DbPeople;
-        if (dbGuests.length > 0) {
-            dbGuest = dbGuests[0];
-        } else {
-            dbGuest = new DbPeople();
-            dbGuest.name = personVM.name;
-            dbGuest.phone = personVM.phone;
-            dbGuest.tz= personVM.peopleId;
-            dbGuest.mailAddress = personVM.mailAddress;
+        // let dbGuest: DbPeople;
+        // if (dbGuests.length > 0) {
+        //     dbGuest = dbGuests[0];
+        // } else {
+        //     dbGuest = new DbPeople();
+        //     dbGuest.name = personVM.name;
+        //     dbGuest.phone = personVM.phone;
+        //     dbGuest.tz= personVM.peopleId;
+        //     dbGuest.mailAddress = personVM.mailAddress;
             
-            dbGuest = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbGuest).toPromise();
-        }
+        //     dbGuest = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbGuest).toPromise();
+        // }
+        let personUrl = this.baseUrl + '/people?tz=' + personVM.peopleId;
+        
+          let dbPeaples = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
+          let dbGuest: DbGuest= new DbGuest();
+          if (dbPeaples.length > 0) {
+              dbGuest.idPeapleTable= dbPeaples[0].id;
+              dbGuest = await this.httpClient.post<DbGuest>(this.baseUrl + '/guest', dbGuest).toPromise();
+              
+          } else {
+              let dbPeaple = new DbPeople();
+              dbPeaple.name = personVM.name;
+              dbPeaple.phone = personVM.phone;
+              dbPeaple.mailAddress = personVM.mailAddress;
+              dbPeaple.tz = personVM.peopleId;
+              dbPeaple = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbPeaple).toPromise();
+              dbGuest.idPeapleTable = dbPeaple.id;            
+              dbGuest = await this.httpClient.post<DbGuest>(this.baseUrl + '/guest', dbGuest).toPromise();
+          }
 
     }
     async AddInviter(personVM: People): Promise<void> {
