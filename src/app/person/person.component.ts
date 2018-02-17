@@ -5,6 +5,7 @@ import { Guest } from '../model/guest';
 import { HtmlParser } from '@angular/compiler';
 import { Events } from '../model/events';
 import { People } from '../model/people';
+import { Partisipation } from '../model/partisipation';
 
 
 
@@ -18,8 +19,9 @@ export class PersonComponent implements OnInit {
 
 private newGuest: People = new People();
 private guests: People[] = [];
-
+private partisipation = new Partisipation();
  private partyType: Events[] = [];
+ private newPartyType: Events = new Events();
  
   constructor(private partyService: PartyService) {
     
@@ -27,7 +29,7 @@ private guests: People[] = [];
 
   ngOnInit() {
      this.GetParty();
-
+    
 
    this.partyService.getGest().subscribe(guests=>{
       this.guests = guests;
@@ -35,8 +37,11 @@ private guests: People[] = [];
   } 
    private AddGuest(){    
     this.newGuest;
-        this.partyService.AddGuest(this.newGuest).then(()=>{
+    this.newPartyType;
+    
+        this.partyService.AddGuest(this.newGuest,this.newPartyType).then(()=>{
            this.newGuest = new People();
+           this.newPartyType=new Events();
            this.partyService.getGest().subscribe(guests=>{
              this.guests = guests;
             });
@@ -51,7 +56,9 @@ private guests: People[] = [];
       private GetParty(){
         this.partyService.GetParty().subscribe(partyType=>{
           this.partyType = partyType;
+         
         });
+
       }
 
      
