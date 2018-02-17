@@ -18,8 +18,8 @@ export class MenuComponent implements OnInit {
   private manot: Mana[] = [];
   private mealTypes: Sivug[] = [];
   private partyId: number;
-
-
+  private successAdd: boolean = false;
+  private message: string = '';
   ngOnInit() {
     this.GetMealTypes();
     this.partyId = this.partyService.currentPartyId;
@@ -34,8 +34,12 @@ export class MenuComponent implements OnInit {
   }
   private AddManot(){    
     this.partyService.AddManot(this.manot).then(()=>{
-      
-      });
+
+      if(!this.newMana.name || !this.newMana.id || !this.newMana.idParty || !this.newMana.idSivog){
+        this.successAdd = true;
+        this.message = 'הנתונים נשמרו בהצלחה!';
+      } }
+    );
       
       return true;
   }
