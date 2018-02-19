@@ -42,6 +42,7 @@ export class MenuComponent implements OnInit {
   addNew (){
     let newMana= new Mana();
     newMana.idParty = this.partyId;
+   
     this.manot.push(newMana);
   }
  

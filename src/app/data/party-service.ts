@@ -17,6 +17,7 @@ import { DbEvents } from "../../db/dbEvents";
 import { People } from "../model/people";
  import {DbPeople} from '../../db/dbPeople';
 import {DbPartisipation} from '../../db/dbPartisipation';
+import { Partisipation } from "../model/partisipation";
 
 @Injectable()
 export class PartyService {
@@ -25,6 +26,7 @@ export class PartyService {
     baseUrl: string = 'http://localhost:3000';
     currentInviterId:number;
     currentGuestId:number;
+    currentPartyPartisipationId:number;
     currentPartyId:number;
 
    /* getEvent(): Observable<Events[]> {
@@ -176,10 +178,11 @@ export class PartyService {
 
               dbPartisipation.idGuest= dbPeaple.id;               
               dbPartisipation.idParty= partyType.Id;
-            console.log(partyType.Id);
+            
               dbPartisipation = await this.httpClient.post<DbPartisipation>(this.baseUrl + '/partisipation', dbPartisipation).toPromise();
           }
-
+          this.currentGuestId = dbPartisipation.idGuest;
+          this.currentPartyPartisipationId=dbPartisipation.idParty;
     }
 
 
@@ -247,7 +250,15 @@ export class PartyService {
         
     }
 
-
+    GetMenuForChoose():Observable<Mana[]>{
+       // let idPartyUrl = this.baseUrl + '/manot?idParty=' + newGuestView.idParty;
+       // let idGuestUrl = this.baseUrl + '/manot?idGuest=' + newGuestView.idGuest;
+        let url = this.baseUrl + "/manot";
+      // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
+        return this.httpClient.get<Mana[]>(url);
+        
+    }
+   
     async AddManot(manot: Mana[]): Promise<void> {
 
         let dbManot :DbMana[] = [];

@@ -13,6 +13,31 @@
       "idGuest": 26,
       "idParty": "1",
       "id": 3
+    },
+    {
+      "idGuest": 28,
+      "idParty": "2",
+      "id": 4
+    },
+    {
+      "idGuest": 29,
+      "idParty": "2",
+      "id": 5
+    },
+    {
+      "idGuest": 30,
+      "idParty": "3",
+      "id": 6
+    },
+    {
+      "idGuest": 31,
+      "idParty": "2",
+      "id": 7
+    },
+    {
+      "idGuest": 32,
+      "idParty": "1",
+      "id": 8
     }
   ],
   "partys": [
@@ -195,6 +220,21 @@
       "place": "uuuuuu",
       "meatMilk": "בשרי",
       "id": 24
+    },
+    {
+      "name": "חגיגה ",
+      "dateEvent": "2018-02-13",
+      "numTackPart": "78",
+      "place": "קדושת ללוי",
+      "meatMilk": "בשרי",
+      "idInviter": 18,
+      "id": 25
+    },
+    {
+      "id": 26
+    },
+    {
+      "id": 27
     }
   ],
   "people": [
@@ -419,6 +459,32 @@
       "mailAddress": "rrrrrrrrrr",
       "tz": "rrrrrrrrr",
       "id": 26
+    },
+    {
+      "name": "יהודיתדרוק",
+      "phone": "ככ",
+      "mailAddress": "ככככ",
+      "tz": "2005023699",
+      "id": 27
+    },
+    {
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "id": 31
+    },
+    {
+      "name": "dddddddddddd",
+      "phone": "ddddddd",
+      "mailAddress": "dddddddddd",
+      "tz": "dddddddddd",
+      "id": 32
     }
   ],
   "guest": [
@@ -457,6 +523,26 @@
     {
       "idPeapleTable": 26,
       "id": 9
+    },
+    {
+      "idPeapleTable": 28,
+      "id": 10
+    },
+    {
+      "idPeapleTable": 29,
+      "id": 11
+    },
+    {
+      "idPeapleTable": 30,
+      "id": 12
+    },
+    {
+      "idPeapleTable": 31,
+      "id": 13
+    },
+    {
+      "idPeapleTable": 32,
+      "id": 14
     }
   ],
   "inviter": [
@@ -518,6 +604,10 @@
     {
       "idPeapleTable": 19,
       "id": 17
+    },
+    {
+      "idPeapleTable": 27,
+      "id": 18
     }
   ],
   "manot": [
@@ -694,19 +784,6 @@
     ],
     [
       {
-        "nameMana": "ברוקולי",
-        "idParty": 19
-      },
-      {
-        "nameMana": "קוסקוס",
-        "idParty": 19
-      },
-      {
-        "idParty": 19
-      }
-    ],
-    [
-      {
         "nameMana": "עוף",
         "idParty": 19
       },
@@ -721,34 +798,30 @@
     ],
     [
       {
-        "nameMana": "ע",
-        "idParty": 20
+        "nameMana": "meat"
       },
       {
-        "nameMana": "א",
-        "idParty": 20
+        "nameMana": "rasi"
       },
       {
-        "nameMana": "י",
-        "idParty": 20
+        "nameMana": "jus"
       }
     ],
     [
       {
-        "nameMana": "jhvjhgj",
-        "idParty": 21
+        "nameMana": "xxxx"
       },
       {
-        "nameMana": "hghg",
-        "idParty": 21
+        "nameMana": "cccc"
       },
       {
-        "nameMana": "gfhgfgh",
-        "idParty": 21
+        "nameMana": "cccc"
       }
     ],
     [
-      {}
+      {
+        "nameMana": "meat"
+      }
     ]
   ],
   "sivug": [
