@@ -18,6 +18,7 @@ import { People } from "../model/people";
  import {DbPeople} from '../../db/dbPeople';
 import {DbPartisipation} from '../../db/dbPartisipation';
 import { Partisipation } from "../model/partisipation";
+import {ReportInviterViewModel } from '../report-inviter/report-inviter-view-model';
 
 @Injectable()
 export class PartyService {
@@ -270,7 +271,31 @@ export class PartyService {
             await this.httpClient.post<DbMana[]>(this.baseUrl + '/manot', dbMana).toPromise();
         });
 
-       
+    }
+    async GetEventsByTz(reportVM:ReportInviterViewModel):Promise<ReportInviterViewModel>{
+        let people = await this.httpClient.get<DbPeople[]>(this.baseUrl+'/people?tz='+reportVM.tz).toPromise();
+        if(people.length > 0){
+             let inviter = await this.httpClient.get<DbInviter[]>(this.baseUrl+'/inviter?idPeapleTable='+people[0].id).toPromise();
+             if(inviter.length>0){
+                let dbEvents = await this.httpClient.get<DbEvents[]>(this.baseUrl+'/partys?idInviter='+inviter[inviter.length -1].id).toPromise();
+                let events:Events[]=[];
 
+                dbEvents.forEach((item)=>{
+                    let event = new Events();
+                    event.Id = item.id;
+                    event.IdInviter =item.idInviter;
+                    event.Name = item.name;
+                    event.Place = item.place;
+                    event.DateEvent = item.dateEvent;   
+                    event.NumTakePart = item.numTackPart;
+                    event.MilkMeat = item.meatMilk;
+                    events.push(event);
+                });
+                reportVM.events = events;
+               
+             }
+            
+        }
+        return reportVM;
     }
 }
