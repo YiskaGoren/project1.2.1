@@ -16,6 +16,8 @@ import { Events } from "../model/events";
 import { DbEvents } from "../../db/dbEvents";
 import { People } from "../model/people";
  import {DbPeople} from '../../db/dbPeople';
+import {DbPartisipation} from '../../db/dbPartisipation';
+import { Partisipation } from "../model/partisipation";
 
 @Injectable()
 export class PartyService {
@@ -23,7 +25,10 @@ export class PartyService {
 
     baseUrl: string = 'http://localhost:3000';
     currentInviterId:number;
+    currentGuestId:number;
+    currentPartyPartisipationId:number;
     currentPartyId:number;
+
    /* getEvent(): Observable<Events[]> {
         let Url = this.baseUrl + '/partys';
         let dbParty$ = this.httpClient.get<DbEvents[]>(Url);
@@ -147,32 +152,41 @@ export class PartyService {
                 })
             }
 
-    async AddGuest(personVM: People): Promise<void> {
-        let personUrl = this.baseUrl + '/people?name=' + personVM.name;
-        let personUrl2 = this.baseUrl + '/people?phone=' + personVM.phone;
-        let personUrl3 = this.baseUrl + '/people?tz=' + personVM.peopleId;
-        let personUrl4 = this.baseUrl + '/people?mailAddress=' + personVM.mailAddress;
+    async AddGuest(personVM: People,partyType: Events): Promise<void> {
+  
+        let personUrl = this.baseUrl + '/people?tz=' + personVM.peopleId;
         
-        let dbGuests = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
-        let dbGuests2 = await this.httpClient.get<DbPeople[]>(personUrl2).toPromise();
-        let dbGuests3 = await this.httpClient.get<DbPeople[]>(personUrl3).toPromise();
-        let dbGuests4 = await this.httpClient.get<DbPeople[]>(personUrl4).toPromise();
-       
-      
-        let dbGuest: DbPeople;
-        if (dbGuests.length > 0) {
-            dbGuest = dbGuests[0];
-        } else {
-            dbGuest = new DbPeople();
-            dbGuest.name = personVM.name;
-            dbGuest.phone = personVM.phone;
-            dbGuest.tz= personVM.peopleId;
-            dbGuest.mailAddress = personVM.mailAddress;
-            
-            dbGuest = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbGuest).toPromise();
-        }
+          let dbPeaples = await this.httpClient.get<DbPeople[]>(personUrl).toPromise();
+          
+          let dbGuest: DbGuest= new DbGuest();
+        
+          let dbPartisipation: DbPartisipation= new DbPartisipation();     
+          
+          if (dbPeaples.length > 0) {
+              dbGuest.idPeapleTable= dbPeaples[0].id;
+              dbGuest = await this.httpClient.post<DbGuest>(this.baseUrl + '/guest', dbGuest).toPromise();
+              
+          } else {
+              let dbPeaple = new DbPeople();
+              dbPeaple.name = personVM.name;
+              dbPeaple.phone = personVM.phone;
+              dbPeaple.mailAddress = personVM.mailAddress;
+              dbPeaple.tz = personVM.peopleId;
+              dbPeaple = await this.httpClient.post<DbPeople>(this.baseUrl + '/people', dbPeaple).toPromise();
+              dbGuest.idPeapleTable = dbPeaple.id;            
+              dbGuest = await this.httpClient.post<DbGuest>(this.baseUrl + '/guest', dbGuest).toPromise();
 
+              dbPartisipation.idGuest= dbPeaple.id;               
+              dbPartisipation.idParty= partyType.Id;
+            
+              dbPartisipation = await this.httpClient.post<DbPartisipation>(this.baseUrl + '/partisipation', dbPartisipation).toPromise();
+          }
+          this.currentGuestId = dbPartisipation.idGuest;
+          this.currentPartyPartisipationId=dbPartisipation.idParty;
     }
+
+
+
     async AddInviter(personVM: People): Promise<void> {
         let personUrl = this.baseUrl + '/people?tz=' + personVM.peopleId;
       
@@ -233,22 +247,30 @@ export class PartyService {
         let url = this.baseUrl + "/partys";
       // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
         return this.httpClient.get<Events[]>(url);
-         
+        
     }
 
-
+    GetMenuForChoose():Observable<Mana[]>{
+       // let idPartyUrl = this.baseUrl + '/manot?idParty=' + newGuestView.idParty;
+       // let idGuestUrl = this.baseUrl + '/manot?idGuest=' + newGuestView.idGuest;
+        let url = this.baseUrl + "/manot";
+      // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
+        return this.httpClient.get<Mana[]>(url);
+        
+    }
+   
     async AddManot(manot: Mana[]): Promise<void> {
 
-        let dbManot :DbMana[] = [];
-        manot.forEach(function(item, index){
+        manot.forEach( async element => {
             let dbMana = new DbMana();
-            dbMana.nameMana = item.name;
-            dbMana.id = item.id;
-            dbMana.idParty = item.idParty;
-            dbMana.idSivog = item.idSivog;
-            dbManot.push(dbMana);
+            dbMana.nameMana = element.name;
+            dbMana.id = element.id;
+            dbMana.idParty = element.idParty;
+            dbMana.idSivog = element.idSivog;
+            await this.httpClient.post<DbMana[]>(this.baseUrl + '/manot', dbMana).toPromise();
         });
-        
-        await this.httpClient.post<DbMana[]>(this.baseUrl + '/manot', dbManot).toPromise();
+
+       
+
     }
 }

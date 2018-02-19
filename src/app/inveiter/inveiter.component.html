@@ -1,43 +1,53 @@
-<h2>פרטי מזמין האירוע</h2>
 
-<p dir="rtl">
+<form class="contaner mt-4" style="text-align:center" novalidate #a="ngForm" >
+    <h2 style="direction: rtl">פרטי מזמין האירוע</h2>
+    <br/>
+<p dir="rtl" class="form-group">
 
-  <label>
+  <label >
      שם:
-      <input type="text" required [(ngModel)]="newInviter.name" name="name"/>
+      <input type="text" required [(ngModel)]="newInviter.name" name="name" class="form-control" 
+      #userName="ngModel"
+      minlength="2" required
+      placeholder="שם פרטי ומשפחה"/>
     </label>
+
     </p >
-    <p dir="rtl">
+    <div *ngIf="userName.errors?.required && userName.touched" class="alert alert-danger">
+        נא להכניס שם
+      </div>
+    <p dir="rtl" class="form-group">
         <label>
         תעודת זהות:
-          <input type="text" required [(ngModel)]="newInviter.peopleId" name="peopleId"/>
+          <input type="text" required [(ngModel)]="newInviter.peopleId" name="peopleId" class="form-control" placeholder="9 ספרות"/>
         </label>
         </p >
-    <p dir="rtl">
+    <p dir="rtl" class="form-group">
     <label>
      כתובת מייל:
-      <input type="text" required [(ngModel)]="newInviter.mailAddress" name="mailAddress"/>
+      <input  type="text" required [(ngModel)]="newInviter.mailAddress" name="mailAddress" class="form-control" placeholder="name@example.com"/>
     </label>
     </p >
-    <p dir="rtl">
+    <p dir="rtl" class="form-group">
     <label>
       טלפון:
-    <input  type="text" required [(ngModel)]="newInviter.phone" name="phone"/>
+    <input  type="text" required [(ngModel)]="newInviter.phone" name="phone" class="form-control" placeholder="נייח/נייד"/>
     </label>
     <br/>
     <br/>
-    <button type="button" (click)="AddInviter()" >המשך</button>
+    <button class="btn btn-primary" type="button" (click)="AddInviter()" >המשך</button>
     
    
 
 
-    <button type="button" routerLink="/events" >להזמנת אירוע</button>
     
-    <br/>
-        <label>זכור אותי
+    <br/><br/>
+        <label class="form-check-label">זכור אותי
         <input type="checkbox" name="checkbox"/></label>
+        <br/>
         <label id="success" style="visibility:hidden ">הנתונים נקלטו בהצלחה!!</label>
 
     <label id="error" *ngIf="errorAdd" >{{message}}</label>
     </p>
+  </form>
     

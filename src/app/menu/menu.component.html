@@ -13,7 +13,7 @@
        <span>{{index}}</span>
         <input type="text" [(ngModel)]="mana.name">
 
-        <select [(ngModel)]="mana.idSivug">
+        <select [(ngModel)]="mana.idSivog">
             <option *ngFor="let mealType of mealTypes" value="{{mealType.id}}">{{mealType.name}}</option>
         </select>
      
@@ -29,7 +29,7 @@
   <div class="container">
       
                 
-    <button type="button" class="btn btn-info btn-block" (click)="AddManot()"> סיום התהליך</button>
-    <label id="seccess" *ngIf="seccessAdd" >{{message}}</label>
+    <button type="button" *ngIf="!message" class="btn btn-info btn-block" (click)="AddManot()"> סיום התהליך</button>
+    <label id="seccess" *ngIf="successAdd" >{{message}}</label>
   </div>
 

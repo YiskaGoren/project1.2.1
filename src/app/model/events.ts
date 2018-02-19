@@ -7,7 +7,6 @@ export class Events{
     public set Id(v : number) {
         this.id = v;
     }
-
     private idInviter : number
     public get IdInviter() : number {
         return this.idInviter;
