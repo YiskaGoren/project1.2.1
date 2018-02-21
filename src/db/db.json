@@ -42,6 +42,223 @@
     {
       "idGuest": 33,
       "id": 9
+    },
+    {
+      "idGuest": 34,
+      "id": 10
+    },
+    {
+      "idGuest": 35,
+      "id": 11
+    },
+    {
+      "idGuest": 36,
+      "idParty": "3",
+      "id": 12
+    },
+    {
+      "idGuest": 37,
+      "idParty": "18",
+      "id": 13
+    },
+    {
+      "idGuest": 38,
+      "idParty": "17",
+      "id": 14
+    },
+    {
+      "idGuest": 39,
+      "idParty": "2",
+      "id": 15
+    },
+    {
+      "idGuest": 40,
+      "id": 16
+    },
+    {
+      "idGuest": 41,
+      "idParty": "2",
+      "id": 17
+    },
+    {
+      "idGuest": 42,
+      "idParty": "17",
+      "id": 18
+    },
+    {
+      "idGuest": 43,
+      "idParty": "18",
+      "id": 19
+    },
+    {
+      "idGuest": 44,
+      "idParty": "18",
+      "id": 20
+    },
+    {
+      "idGuest": 45,
+      "idParty": "2",
+      "id": 21
+    },
+    {
+      "idGuest": 46,
+      "idParty": "21",
+      "id": 22
+    },
+    {
+      "idGuest": 47,
+      "idParty": "21",
+      "id": 23
+    },
+    {
+      "idGuest": 48,
+      "idParty": "21",
+      "id": 24
+    },
+    {
+      "idGuest": 49,
+      "idParty": "21",
+      "id": 25
+    },
+    {
+      "idGuest": 50,
+      "idParty": "21",
+      "id": 26
+    },
+    {
+      "idGuest": 51,
+      "idParty": "21",
+      "id": 27
+    },
+    {
+      "idGuest": 52,
+      "idParty": "21",
+      "id": 28
+    },
+    {
+      "idGuest": 53,
+      "idParty": "21",
+      "id": 29
+    },
+    {
+      "idGuest": 54,
+      "idParty": "21",
+      "id": 30
+    },
+    {
+      "idGuest": 55,
+      "idParty": "21",
+      "id": 31
+    },
+    {
+      "idGuest": 56,
+      "idParty": "21",
+      "id": 32
+    },
+    {
+      "idGuest": 57,
+      "idParty": "21",
+      "id": 33
+    },
+    {
+      "idGuest": 58,
+      "idParty": "21",
+      "id": 34
+    },
+    {
+      "idGuest": 59,
+      "idParty": "1",
+      "id": 35
+    },
+    {
+      "idGuest": 60,
+      "idParty": "21",
+      "id": 36
+    },
+    {
+      "idGuest": 61,
+      "idParty": "21",
+      "id": 37
+    },
+    {
+      "idGuest": 62,
+      "idParty": "21",
+      "id": 38
+    },
+    {
+      "idGuest": 63,
+      "idParty": "21",
+      "id": 39
+    },
+    {
+      "idGuest": 7,
+      "idParty": "21",
+      "id": 40
+    },
+    {
+      "idGuest": 8,
+      "idParty": "21",
+      "id": 41
+    },
+    {
+      "idGuest": 9,
+      "idParty": "21",
+      "id": 42
+    },
+    {
+      "idGuest": 10,
+      "idParty": "21",
+      "id": 43
+    },
+    {
+      "idGuest": 11,
+      "idParty": "21",
+      "id": 44
+    },
+    {
+      "idGuest": 12,
+      "idParty": "21",
+      "id": 45
+    },
+    {
+      "idGuest": 13,
+      "idParty": "21",
+      "id": 46
+    },
+    {
+      "idGuest": 14,
+      "idParty": "21",
+      "id": 47
+    },
+    {
+      "idGuest": 15,
+      "idParty": "21",
+      "id": 48
+    },
+    {
+      "idGuest": 16,
+      "idParty": "21",
+      "id": 49
+    },
+    {
+      "idGuest": 17,
+      "idParty": "21",
+      "id": 50
+    },
+    {
+      "idGuest": 18,
+      "idParty": "21",
+      "id": 51
+    },
+    {
+      "idGuest": 19,
+      "idParty": "21",
+      "id": 52
+    },
+    {
+      "idGuest": 20,
+      "idParty": "21",
+      "id": 53
     }
   ],
   "partys": [
@@ -253,157 +470,91 @@
       "id": 6
     },
     {
-      "name": "עדקד",
-      "phone": "565",
-      "mailAddress": "hgdfgd",
-      "tz": "4533",
+      "name": "qqwq",
+      "phone": "d",
+      "mailAddress": "dw",
+      "tz": "wqe",
       "id": 7
     },
     {
-      "name": "מיכאל לוי",
-      "phone": "4564",
-      "mailAddress": "gfghsbg2",
-      "tz": "1245",
+      "name": "w",
+      "phone": "e",
+      "mailAddress": "e",
+      "tz": "q",
       "id": 8
     },
     {
-      "name": "ורדית",
-      "phone": "054545454558",
-      "mailAddress": "dsa@dfsa.faf",
-      "tz": "303042113",
+      "name": "341",
+      "phone": "f",
+      "mailAddress": "f",
+      "tz": "r",
       "id": 9
     },
     {
-      "name": "mjhg",
-      "phone": "0554545454",
-      "mailAddress": "kjhg@rsg.fgsd",
-      "tz": "1111111118",
+      "name": "ax",
+      "phone": "c",
+      "mailAddress": "c",
+      "tz": "c",
       "id": 10
     },
     {
-      "name": "vcfds",
-      "phone": "0545454545",
-      "mailAddress": "fdsfdsfds@fsd.df",
-      "tz": "305100579",
+      "name": "bnm",
+      "phone": "6",
+      "mailAddress": "y",
+      "tz": "646",
       "id": 11
     },
     {
-      "name": "הדר",
-      "phone": "025245",
-      "mailAddress": "ghfhjfjhg",
-      "tz": "8744545",
+      "name": "wwsx",
+      "phone": "f",
+      "mailAddress": "f",
+      "tz": "f",
       "id": 12
     },
     {
+      "name": "wd",
+      "phone": " v",
+      "mailAddress": "v",
+      "tz": "d",
       "id": 13
     },
     {
-      "name": "הדר לוי",
-      "phone": "564564",
-      "mailAddress": "chbfgh",
-      "tz": "564564125",
+      "name": "aaq",
+      "phone": "nn",
+      "mailAddress": "g",
+      "tz": "wr",
       "id": 14
     },
     {
-      "name": "gggg",
-      "phone": "ggggg",
-      "tz": "ggggggg",
-      "mailAddress": "ggggggg",
+      "name": "c",
+      "mailAddress": "b",
+      "tz": " f",
       "id": 15
     },
     {
-      "name": "ooooooooooo",
-      "phone": "oooooooooo",
-      "tz": "ooooooooooooo",
-      "mailAddress": "ooooooooooo",
+      "name": "ccs",
+      "phone": "cs",
+      "tz": "sc",
       "id": 16
     },
     {
-      "name": "ppppppp",
-      "phone": "ppppppp",
-      "mailAddress": "pppppp",
-      "tz": "ppppppp",
+      "name": "iky",
+      "mailAddress": "k",
+      "tz": "kgu",
       "id": 17
     },
     {
-      "name": "hgfhtf",
-      "phone": "ytfytf",
-      "mailAddress": "ytfytf",
-      "tz": "ttdgrd",
+      "name": "as",
+      "tz": "s",
       "id": 18
     },
     {
-      "name": "nygvyyhgv",
-      "phone": "yyyhghg",
-      "mailAddress": "5y45yyyynnb",
-      "tz": "y05yy4yyyy",
+      "name": "b",
       "id": 19
     },
     {
+      "name": "1",
       "id": 20
-    },
-    {
-      "name": "sssss",
-      "phone": "333333",
-      "mailAddress": "ffffff",
-      "tz": "fffffffff",
-      "id": 21
-    },
-    {
-      "id": 22
-    },
-    {
-      "name": "564664",
-      "phone": "4654664",
-      "mailAddress": "64654646",
-      "tz": "4464",
-      "id": 23
-    },
-    {
-      "id": 24
-    },
-    {
-      "name": "yyyyyy",
-      "phone": "yyyyy",
-      "mailAddress": "yyyyy",
-      "tz": "yyyyy",
-      "id": 25
-    },
-    {
-      "name": "rrrrrrrr",
-      "phone": "rrrrrrrrrr",
-      "mailAddress": "rrrrrrrrrr",
-      "tz": "rrrrrrrrr",
-      "id": 26
-    },
-    {
-      "name": "יהודיתדרוק",
-      "phone": "ככ",
-      "mailAddress": "ככככ",
-      "tz": "2005023699",
-      "id": 27
-    },
-    {
-      "id": 28
-    },
-    {
-      "id": 29
-    },
-    {
-      "id": 30
-    },
-    {
-      "id": 31
-    },
-    {
-      "name": "dddddddddddd",
-      "phone": "ddddddd",
-      "mailAddress": "dddddddddd",
-      "tz": "dddddddddd",
-      "id": 32
-    },
-    {
-      "id": 33
     }
   ],
   "guest": [
@@ -420,56 +571,60 @@
       "id": 3
     },
     {
-      "idPeapleTable": 21,
+      "idPeapleTable": 7,
       "id": 4
     },
     {
-      "idPeapleTable": 22,
+      "idPeapleTable": 8,
       "id": 5
     },
     {
-      "idPeapleTable": 23,
+      "idPeapleTable": 9,
       "id": 6
     },
     {
-      "idPeapleTable": 24,
+      "idPeapleTable": 10,
       "id": 7
     },
     {
-      "idPeapleTable": 25,
+      "idPeapleTable": 11,
       "id": 8
     },
     {
-      "idPeapleTable": 26,
+      "idPeapleTable": 12,
       "id": 9
     },
     {
-      "idPeapleTable": 28,
+      "idPeapleTable": 13,
       "id": 10
     },
     {
-      "idPeapleTable": 29,
+      "idPeapleTable": 14,
       "id": 11
     },
     {
-      "idPeapleTable": 30,
+      "idPeapleTable": 15,
       "id": 12
     },
     {
-      "idPeapleTable": 31,
+      "idPeapleTable": 16,
       "id": 13
     },
     {
-      "idPeapleTable": 32,
+      "idPeapleTable": 17,
       "id": 14
     },
     {
-      "idPeapleTable": 3,
+      "idPeapleTable": 18,
       "id": 15
     },
     {
-      "idPeapleTable": 33,
+      "idPeapleTable": 19,
       "id": 16
+    },
+    {
+      "idPeapleTable": 20,
+      "id": 17
     }
   ],
   "inviter": [
@@ -492,285 +647,9 @@
     {
       "idPeapleTable": 6,
       "id": 5
-    },
-    {
-      "idPeapleTable": 6,
-      "id": 6
-    },
-    {
-      "idPeapleTable": 7,
-      "id": 7
-    },
-    {
-      "idPeapleTable": 8,
-      "id": 8
-    },
-    {
-      "idPeapleTable": 2,
-      "id": 9
-    },
-    {
-      "idPeapleTable": 2,
-      "id": 10
-    },
-    {
-      "idPeapleTable": 9,
-      "id": 11
-    },
-    {
-      "idPeapleTable": 10,
-      "id": 12
-    },
-    {
-      "idPeapleTable": 9,
-      "id": 13
-    },
-    {
-      "idPeapleTable": 11,
-      "id": 14
-    },
-    {
-      "idPeapleTable": 12,
-      "id": 15
-    },
-    {
-      "idPeapleTable": 18,
-      "id": 16
-    },
-    {
-      "idPeapleTable": 19,
-      "id": 17
-    },
-    {
-      "idPeapleTable": 27,
-      "id": 18
-    },
-    {
-      "idPeapleTable": 3,
-      "id": 19
-    },
-    {
-      "idPeapleTable": 2,
-      "id": 20
-    },
-    {
-      "idPeapleTable": 6,
-      "id": 21
     }
   ],
   "manot": [
-    {
-      "nameMana": "פשטידת גבינה",
-      "id": 1
-    },
-    {
-      "nameMana": "oooo",
-      "id": 2
-    },
-    {
-      "nameMana": "ffff",
-      "id": 3
-    },
-    {
-      "nameMana": "hfhyht",
-      "id": 4
-    },
-    {
-      "nameMana": "עכע",
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    [
-      {
-        "idParty": 16
-      },
-      {
-        "idParty": 16
-      }
-    ],
-    [
-      {
-        "idParty": 16
-      },
-      {
-        "idParty": 16
-      }
-    ],
-    [
-      {
-        "nameMana": "לחיךל",
-        "idParty": 17
-      },
-      {
-        "nameMana": "אורז",
-        "idParty": 17
-      }
-    ],
-    [
-      {
-        "nameMana": "hhhh",
-        "idParty": 18
-      },
-      {
-        "nameMana": "nnnnn",
-        "idParty": 18
-      },
-      {
-        "nameMana": "hjhjh",
-        "idParty": 18
-      },
-      {
-        "idParty": 18
-      }
-    ],
-    [
-      {
-        "nameMana": "hhhh",
-        "idParty": 18
-      },
-      {
-        "nameMana": "nnnnn",
-        "idParty": 18
-      },
-      {
-        "nameMana": "hjhjh",
-        "idParty": 18
-      },
-      {
-        "idParty": 18
-      }
-    ],
-    [
-      {
-        "nameMana": "hhhh",
-        "idParty": 18
-      },
-      {
-        "nameMana": "nnnnn",
-        "idParty": 18
-      },
-      {
-        "nameMana": "hjhjh",
-        "idParty": 18
-      },
-      {
-        "idParty": 18
-      }
-    ],
-    [
-      {
-        "nameMana": "hhhh",
-        "idParty": 18
-      },
-      {
-        "nameMana": "nnnnn",
-        "idParty": 18
-      },
-      {
-        "nameMana": "hjhjh",
-        "idParty": 18
-      },
-      {
-        "idParty": 18
-      }
-    ],
-    [
-      {
-        "nameMana": "hhhh",
-        "idParty": 18
-      },
-      {
-        "nameMana": "nnnnn",
-        "idParty": 18
-      },
-      {
-        "nameMana": "hjhjh",
-        "idParty": 18
-      },
-      {
-        "idParty": 18
-      }
-    ],
-    [
-      {
-        "nameMana": "hhhh",
-        "idParty": 18
-      },
-      {
-        "nameMana": "nnnnn",
-        "idParty": 18
-      },
-      {
-        "nameMana": "hjhjh",
-        "idParty": 18
-      },
-      {
-        "idParty": 18
-      }
-    ],
-    [
-      {
-        "nameMana": "מרק"
-      },
-      {
-        "nameMana": "עוף"
-      },
-      {}
-    ],
-    [
-      {
-        "nameMana": "מרק"
-      },
-      {
-        "nameMana": "עוף"
-      },
-      {
-        "nameMana": "vvvv"
-      }
-    ],
-    [
-      {
-        "nameMana": "עוף",
-        "idParty": 19
-      },
-      {
-        "nameMana": "אורז",
-        "idParty": 19
-      },
-      {
-        "nameMana": "ירקות",
-        "idParty": 19
-      }
-    ],
-    [
-      {
-        "nameMana": "meat"
-      },
-      {
-        "nameMana": "rasi"
-      },
-      {
-        "nameMana": "jus"
-      }
-    ],
-    [
-      {
-        "nameMana": "xxxx"
-      },
-      {
-        "nameMana": "cccc"
-      },
-      {
-        "nameMana": "cccc"
-      }
-    ],
-    [
-      {
-        "nameMana": "meat"
-      }
-    ],
     {
       "nameMana": "בדיקה 2",
       "idParty": 19,
@@ -788,11 +667,6 @@
       "idParty": 20,
       "idSivog": "1",
       "id": 9
-    },
-    {
-      "nameMana": "גדשדגש",
-      "idSivog": "2",
-      "id": 10
     },
     {
       "nameMana": "מנה 1",
@@ -819,6 +693,368 @@
     {
       "id": 3,
       "name": "מנה קטנה"
+    }
+  ],
+  "guestMake": [
+    {
+      "id": 1,
+      "idGusest": 1,
+      "idMana": 1
+    },
+    {
+      "idGuest": 7,
+      "idMana": 7,
+      "id": 2
+    },
+    {
+      "idGuest": 7,
+      "idMana": 8,
+      "id": 3
+    },
+    {
+      "idGuest": 7,
+      "idMana": 9,
+      "id": 4
+    },
+    {
+      "idGuest": 7,
+      "idMana": 11,
+      "id": 5
+    },
+    {
+      "idGuest": 7,
+      "idMana": 12,
+      "id": 6
+    },
+    {
+      "idGuest": 8,
+      "idMana": 7,
+      "id": 7
+    },
+    {
+      "idGuest": 8,
+      "idMana": 8,
+      "id": 8
+    },
+    {
+      "idGuest": 8,
+      "idMana": 9,
+      "id": 9
+    },
+    {
+      "idGuest": 8,
+      "idMana": 11,
+      "id": 10
+    },
+    {
+      "idGuest": 8,
+      "idMana": 12,
+      "id": 11
+    },
+    {
+      "idGuest": 9,
+      "idMana": 7,
+      "id": 12
+    },
+    {
+      "idGuest": 9,
+      "idMana": 8,
+      "id": 13
+    },
+    {
+      "idGuest": 9,
+      "idMana": 9,
+      "id": 14
+    },
+    {
+      "idGuest": 9,
+      "idMana": 11,
+      "id": 15
+    },
+    {
+      "idGuest": 9,
+      "idMana": 12,
+      "id": 16
+    },
+    {
+      "idGuest": 10,
+      "idMana": 7,
+      "id": 17
+    },
+    {
+      "idGuest": 10,
+      "idMana": 11,
+      "id": 18
+    },
+    {
+      "idGuest": 10,
+      "idMana": 8,
+      "id": 19
+    },
+    {
+      "idGuest": 10,
+      "idMana": 9,
+      "id": 20
+    },
+    {
+      "idGuest": 10,
+      "idMana": 12,
+      "id": 21
+    },
+    {
+      "idGuest": 11,
+      "idMana": 7,
+      "id": 22
+    },
+    {
+      "idGuest": 11,
+      "idMana": 11,
+      "id": 23
+    },
+    {
+      "idGuest": 11,
+      "idMana": 8,
+      "id": 24
+    },
+    {
+      "idGuest": 11,
+      "idMana": 9,
+      "id": 25
+    },
+    {
+      "idGuest": 11,
+      "idMana": 12,
+      "id": 26
+    },
+    {
+      "idGuest": 11,
+      "idMana": 7,
+      "id": 27
+    },
+    {
+      "idGuest": 11,
+      "idMana": 9,
+      "id": 28
+    },
+    {
+      "idGuest": 11,
+      "idMana": 8,
+      "id": 29
+    },
+    {
+      "idGuest": 11,
+      "idMana": 11,
+      "id": 30
+    },
+    {
+      "idGuest": 11,
+      "idMana": 12,
+      "id": 31
+    },
+    {
+      "idGuest": 11,
+      "idMana": 7,
+      "id": 32
+    },
+    {
+      "idGuest": 11,
+      "idMana": 9,
+      "id": 33
+    },
+    {
+      "idGuest": 11,
+      "idMana": 8,
+      "id": 34
+    },
+    {
+      "idGuest": 11,
+      "idMana": 11,
+      "id": 35
+    },
+    {
+      "idGuest": 11,
+      "idMana": 12,
+      "id": 36
+    },
+    {
+      "idGuest": 12,
+      "idMana": 7,
+      "id": 37
+    },
+    {
+      "idGuest": 12,
+      "idMana": 9,
+      "id": 38
+    },
+    {
+      "idGuest": 12,
+      "idMana": 8,
+      "id": 39
+    },
+    {
+      "idGuest": 12,
+      "idMana": false,
+      "id": 40
+    },
+    {
+      "idGuest": 12,
+      "idMana": true,
+      "id": 41
+    },
+    {
+      "idGuest": 13,
+      "idMana": 7,
+      "id": 42
+    },
+    {
+      "idGuest": 13,
+      "idMana": 11,
+      "id": 43
+    },
+    {
+      "idGuest": 13,
+      "idMana": 8,
+      "id": 44
+    },
+    {
+      "idGuest": 13,
+      "idMana": 9,
+      "id": 45
+    },
+    {
+      "idGuest": 13,
+      "idMana": 12,
+      "id": 46
+    },
+    {
+      "idGuest": 14,
+      "idMana": 7,
+      "id": 47
+    },
+    {
+      "idGuest": 14,
+      "idMana": 9,
+      "id": 48
+    },
+    {
+      "idGuest": 14,
+      "idMana": 8,
+      "id": 49
+    },
+    {
+      "idGuest": 14,
+      "idMana": 11,
+      "id": 50
+    },
+    {
+      "idGuest": 14,
+      "idMana": 12,
+      "id": 51
+    },
+    {
+      "idGuest": 15,
+      "idMana": 7,
+      "id": 52
+    },
+    {
+      "idGuest": 15,
+      "idMana": 9,
+      "id": 53
+    },
+    {
+      "idGuest": 15,
+      "idMana": 8,
+      "id": 54
+    },
+    {
+      "idGuest": 15,
+      "idMana": 11,
+      "id": 55
+    },
+    {
+      "idGuest": 15,
+      "idMana": 12,
+      "id": 56
+    },
+    {
+      "idGuest": 16,
+      "idMana": false,
+      "id": 57
+    },
+    {
+      "idGuest": 18,
+      "idMana": 7,
+      "id": 58
+    },
+    {
+      "idGuest": 18,
+      "idMana": 9,
+      "id": 59
+    },
+    {
+      "idGuest": 18,
+      "idMana": 8,
+      "id": 60
+    },
+    {
+      "idGuest": 18,
+      "idMana": false,
+      "id": 61
+    },
+    {
+      "idGuest": 18,
+      "idMana": true,
+      "id": 62
+    },
+    {
+      "idGuest": 19,
+      "idMana": 7,
+      "id": 63
+    },
+    {
+      "idGuest": 19,
+      "idMana": 8,
+      "id": 64
+    },
+    {
+      "idGuest": 19,
+      "idMana": 9,
+      "id": 65
+    },
+    {
+      "idGuest": 19,
+      "idMana": true,
+      "id": 66
+    },
+    {
+      "idGuest": 19,
+      "idMana": false,
+      "id": 67
+    },
+    {
+      "idGuest": 20,
+      "idMana": 7,
+      "id": 68
+    },
+    {
+      "idGuest": 20,
+      "idMana": 8,
+      "id": 69
+    },
+    {
+      "idGuest": 20,
+      "idMana": 9,
+      "id": 70
+    },
+    {
+      "idGuest": 20,
+      "idMana": false,
+      "id": 71
+    },
+    {
+      "idGuest": 20,
+      "idMana": 11,
+      "id": 72
     }
   ]
 }

@@ -1,19 +1,64 @@
-<select >
-  <option *ngFor="let mana of manot" value="{{mana.id}}">{{mana.nameMana}} </option>
-</select>
- <h1>
-אורח יקר בחר מנה אותה תרצה להכין
-</h1>
+<h1> אורח יקר בחר מנה אותה תרצה </h1> 
 
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">1</label>
+<!-- <select *ngFor="let mana of manot" >
+
+  <option *ngIf="mana.idParty==IdPartyForView"  value="{{mana.id}}">{{mana.nameMana}} </option>
+</select>   -->
+
+
+
+
+<div class="form-check form-check-inline" *ngFor="let mana of manot"><br/>
+  <input *ngIf="mana.idParty==IdPartyForView" class="form-check-input"  type="checkbox" id="inlineCheckbox1" [(ngModel)]="mana.id"  value="{{mana.id}}" ><br/>
+  <label *ngIf="mana.idParty==IdPartyForView" class="form-check-label" for="inlineCheckbox1"  >{{mana.nameMana}}-{{mana.idSivog}}<br/></label><br/>
 </div>
-<div class="form-check form-check-inline">
+<br><br>
+<label>1 = מנה קטנה</label><br>
+<label>2 = מנה בינונית</label><br>
+<label>3 = מנה גדולה</label><br>
+<button class="btn btn-primary" type="button" (click)="AddGuestMake()"  >המשך</button>
+
+
+
+<!-- <form class="was-validated">
+  <div class="custom-control custom-checkbox mb-3">
+    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+    <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
+   
+  </div>
+</form> -->
+<!-- <div class="form-check form-check-inline">
   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
   <label class="form-check-label" for="inlineCheckbox2">2</label>
 </div>
 <div class="form-check form-check-inline">
   <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
   <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+</div> -->
+
+<!-- <div class="col-auto my-1">
+  <div class="custom-control custom-checkbox mr-sm-2">
+    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+    <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+  </div>
 </div>
+
+<div class="custom-control custom-checkbox mb-3">
+  <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+  <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
+  <div class="invalid-feedback">Example invalid feedback text</div>
+</div>
+
+
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+</div> -->
+
+
+
+ 

@@ -4,6 +4,7 @@ import { Events } from '../model/events';
 import { HtmlParser } from '@angular/compiler';
 import { Partisipation } from '../model/partisipation';
 import { Mana } from '../model/mana';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-viewguest',
@@ -15,27 +16,37 @@ import { Mana } from '../model/mana';
 export class ViewguestComponent implements OnInit {
   private partyType: Events[] = [];
   private manot: Mana[] = [];
+  private newManaToMake: Mana = new Mana();
   private newGuestView :Partisipation = new Partisipation();
-   constructor(private partyService: PartyService) {
+  private IdPartyForView: number=this.partyService.currentPartyPartisipationId;
+  private IdGuestMake:number =this.partyService.currentGuestId;
+  n:number;
+   constructor(private partyService: PartyService, private router: Router) {
      
     }
  
    ngOnInit() {
-
-     
-      this.newGuestView.idGuest = this.partyService.currentGuestId;
-      this.newGuestView.idParty = this.partyService.currentPartyPartisipationId;
-      this.GetMenuForChoose();
+  
+    this.n=21; 
+    // this.IdPartyForView=this.partyService.currentPartyPartisipationId;
+     console.log("kk"+this.IdPartyForView);
+     this.GetMenuForChoose();
   }
-  // private GetParty(){
-  //   this.partyService.GetParty().subscribe(partyType=>{
-  //     this.partyType = partyType;
-  //   });
-  // }
 
-  private GetMenuForChoose(){
+ // this.IdPartyForView
+  private GetMenuForChoose( ){
+   
     this.partyService.GetMenuForChoose().subscribe(manot=>{
       this.manot = manot;
     });
   }
+
+  private AddGuestMake(){    
+    
+     this.partyService.AddGuestMake(this.manot,this.IdGuestMake).then(()=>{
+        // this.router.navigate(['']); 
+       });
+       
+       return true;
+   }
 }

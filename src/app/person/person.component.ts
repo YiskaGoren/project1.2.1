@@ -6,7 +6,7 @@ import { HtmlParser } from '@angular/compiler';
 import { Events } from '../model/events';
 import { People } from '../model/people';
 import { Partisipation } from '../model/partisipation';
-
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -23,7 +23,7 @@ private partisipation = new Partisipation();
  private partyType: Events[] = [];
  private newPartyType: Events = new Events();
  
-  constructor(private partyService: PartyService) {
+  constructor(private partyService: PartyService, private router: Router) {
     
    }
 
@@ -40,15 +40,20 @@ private partisipation = new Partisipation();
     this.newPartyType;
     
         this.partyService.AddGuest(this.newGuest,this.newPartyType).then(()=>{
+           
            this.newGuest = new People();
            this.newPartyType=new Events();
            this.partyService.getGest().subscribe(guests=>{
              this.guests = guests;
+             this.router.navigate(['viewguest']);
             });
+      
           }).catch(()=>{
             
           });
           
+      
+
           return true;
       }
 

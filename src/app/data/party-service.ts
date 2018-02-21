@@ -19,6 +19,7 @@ import { People } from "../model/people";
 import {DbPartisipation} from '../../db/dbPartisipation';
 import { Partisipation } from "../model/partisipation";
 import {ReportInviterViewModel } from '../report-inviter/report-inviter-view-model';
+import { DbGuestMake } from "../../db/db.guestMake";
 
 @Injectable()
 export class PartyService {
@@ -239,6 +240,19 @@ export class PartyService {
 
     }
 
+    async AddGuestMake(manot:Mana[],IdGuestMake:number): Promise<void> 
+    {
+
+        manot.forEach( async element => {
+            let dbguestMake = new DbGuestMake();
+            dbguestMake.idGuest = IdGuestMake;
+            dbguestMake.idMana=element.id;
+            await this.httpClient.post<DbGuestMake[]>(this.baseUrl + '/guestMake', dbguestMake).toPromise();
+        });
+
+
+    }
+
     GetMealTypes():Observable<Sivug[]>{
         let url = this.baseUrl + "/sivug";
         return this.httpClient.get<Sivug[]>(url);        
@@ -250,16 +264,16 @@ export class PartyService {
         return this.httpClient.get<Events[]>(url);
         
     }
-
+   // IdPartyForView:number
     GetMenuForChoose():Observable<Mana[]>{
-       // let idPartyUrl = this.baseUrl + '/manot?idParty=' + newGuestView.idParty;
-       // let idGuestUrl = this.baseUrl + '/manot?idGuest=' + newGuestView.idGuest;
-        let url = this.baseUrl + "/manot";
-      // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
-        return this.httpClient.get<Mana[]>(url);
+      //  let idPartyUrl = this.baseUrl + '/manot?idParty' ;
         
-    }
-   
+       // let idGuestUrl = this.baseUrl + '/manot?idGuest=' + newGuestView.idGuest;
+     //  if (+idPartyUrl===this.currentPartyPartisipationId){
+        let url = this.baseUrl + "/manot";
+        return this.httpClient.get<Mana[]>(url);
+      // }
+   }
     async AddManot(manot: Mana[]): Promise<void> {
 
         manot.forEach( async element => {
