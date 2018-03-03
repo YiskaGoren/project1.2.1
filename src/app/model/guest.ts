@@ -1,7 +1,6 @@
 
 
-export class guest {
-    constructor(name: string,guestId: string,phoneNum:string, mailAddress:string) { }
-
+export class Guest{
+    public idGuest: number;
     
-}
+}   

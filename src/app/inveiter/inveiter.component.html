@@ -1,32 +1,75 @@
-<h2>פרטי אורח</h2>
 
-<p dir="rtl">
+<form class="contaner mt-4" style="text-align:center" novalidate #a="ngForm" >
+    <h2 style="direction: rtl">פרטי מזמין האירוע</h2>
+    <br/>
+<p dir="rtl" class="form-group">
 
-  <label>
+  <label >
      שם:
-      <input type="text" required [(ngModel)]="newInviter.name" name="name"/>
+      <input type="text" required [(ngModel)]="newInviter.name" name="name" class="form-control" 
+      #userName="ngModel"
+      minlength="2" required
+      placeholder="שם פרטי ומשפחה"/>
     </label>
+
     </p >
-    <p dir="rtl">
+    <div *ngIf="userName.errors?.required && userName.touched" class="alert alert-danger">
+      שם חובה 
+  
+      </div>
+      <div *ngIf="userName.errors?.minlength && userName.touched" class="alert alert-danger">
+        נא הכנס שם תקין
+       </div>
+    <p dir="rtl" class="form-group">
         <label>
         תעודת זהות:
-          <input type="text" required [(ngModel)]="newInviter.id" name="phon"/>
+          <input type="text" required [(ngModel)]="newInviter.peopleId" name="peopleId" class="form-control" 
+          #usertz="ngModel"
+          minlength="9" required
+          placeholder="9 ספרות"
+          />
         </label>
         </p >
-    <p dir="rtl">
+        <div *ngIf="usertz.errors?.required && usertz.touched" class="alert alert-danger">
+          ת.ז. חובה
+        </div>
+        <div *ngIf="usertz.errors?.minlength && usertz.touched" class="alert alert-danger">
+         הכנס ערך תקין
+        </div>
+
+    <p dir="rtl" class="form-group">
     <label>
      כתובת מייל:
-      <input type="text" required [(ngModel)]="newInviter.mailAdress" name="mailAdress"/>
+      <input  type="text" required [(ngModel)]="newInviter.mailAddress" name="mailAddress" class="form-control" 
+      placeholder="name@example.com"    
+      #userMail="ngModel"
+       required
+      
+      />
     </label>
     </p >
-    <p dir="rtl">
+    <div *ngIf="userMail.errors?.required && userMail.touched" class="alert alert-danger">
+      מייל חובה
+    </div>
+
+    <p dir="rtl" class="form-group">
     <label>
       טלפון:
-    <input  type="text" required [(ngModel)]="newInviter.phone" name="phone"/>
+    <input  type="text" required [(ngModel)]="newInviter.phone" name="phone" class="form-control" 
+    placeholder="נייח/נייד"/>
     </label>
     <br/>
     <br/>
-    <button type="button" (click)="AddInviter()" >המשך</button>
-    <label id="error" *ngIf="errorAdd" >{{message}}</label>
+    <button class="btn btn-primary" type="button" (click)="AddInviter()" >המשך</button>
+   
+    <br/><br/>
+        <label class="form-check-label">זכור אותי
+        <input type="checkbox" name="checkbox"/></label>
+        <br/>
+        
+        <label id="success" *ngIf="success" >{{massageOk}}</label>
+
+    <label class="alert alert-danger" id="error" *ngIf="errorAdd" >{{message}}</label>
     </p>
+  </form>
     

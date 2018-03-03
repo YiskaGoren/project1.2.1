@@ -1,7 +1,6 @@
-export class DbInviter{
-    id: number;
-    inviterId:string;
-    name: string;
-    mailAddress:string;
-    Phone:string;
+export class DbInviter{//להוריד
+    id:number;
+    idPeapleTable: number;
+    
+  
 }

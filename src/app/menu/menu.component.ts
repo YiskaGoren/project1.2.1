@@ -17,13 +17,12 @@ export class MenuComponent implements OnInit {
 
   private manot: Mana[] = [];
   private mealTypes: Sivug[] = [];
-  editMana: Mana; 
-
+  private partyId: number;
+  private successAdd: boolean = false;
+  private message: string;
   ngOnInit() {
-    this.GetMealTypes()
-   /* this.partyService.getMana().subscribe(manot=>{
-      this.manot = manot;
-    });*/
+    this.GetMealTypes();
+    this.partyId = this.partyService.currentPartyId;
     if(this.manot.length == 0){
       this.addNew();
     }
@@ -33,28 +32,25 @@ export class MenuComponent implements OnInit {
       this.mealTypes = mealTypes;
     });
   }
-  private AddMana(){    
-    this.partyService.AddMana(this.newMana).then(()=>{
-       this.newMana = new Mana();
-       this.partyService.getMana().subscribe(manot=>{
-         this.manot = manot;
-        });
-      });
+  private AddManot(){    
+    this.partyService.AddManot(this.manot).then(()=>{
+    
+        this.successAdd = true;
+        this.message = 'הנתונים נשמרו בהצלחה!';
+     }
+    );
       
       return true;
   }
   addNew (){
-    this.manot.push(new Mana());
+    let newMana= new Mana();
+    newMana.idParty = this.partyId;
+   
+    this.manot.push(newMana);
   }
-  edit(mana) {
-    this.editMana = mana;
-  }
-  update(mana){
-    this.newMana = mana;
-    this.AddMana();
-  }
-  delete(mana){
-
+ 
+  delete(index){
+    this.manot.splice(index,1);
   }
 }
 

@@ -1,0 +1,41 @@
+
+<h1>{{newInviter.name}}</h1>
+<h2>פרטי הזמנת מסיבה</h2>
+<p dir="rtl">
+<label>
+ שם המסיבה:
+  <input type="text" [(ngModel)]="newEvents.name" name="name"/>
+</label>
+</p >
+<p dir="rtl">
+    <label>
+    כתובת:
+      <input type="text" [(ngModel)]="newEvents.place" name="place"/>
+    </label>
+    </p >
+<p dir="rtl">
+<label>
+ מספר מוזמנים:
+  <input type="text" [(ngModel)]="newEvents.numTakePart" name="numTakePart"/>
+</label>
+</p >
+
+<p dir="rtl">
+<label>
+  תאריך:
+  <input type="date" [(ngModel)]="newEvents.dateEvent" name="dateEvent" />
+</label>
+</p>
+<p dir="rtl">
+<label>
+  בשרי/חלבי:
+  <select [(ngModel)]="newEvents.milkMeat">
+    <option value="בשרי">בשרי</option>
+    <option value="חלבי">חלבי</option>
+    
+</select>
+</label>
+<br/>
+<br/>
+
+<button type="button" (click)="AddEvent()"  >המשך</button>

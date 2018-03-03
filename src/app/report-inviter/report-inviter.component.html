@@ -1,0 +1,39 @@
+<div style="direction:rtl;text-align: center">
+  <label for="tz">הזן תז</label>
+  <input type="number" id="tz"  [(ngModel)]="reportViewModel.tz" (blur)="onBlurTz()" /><br/>
+  <div *ngIf="reportViewModel.events && reportViewModel.events.length > 0" >
+    <label for="events">בחר ארוע</label>
+    <select id="events" [(ngModel)]="reportViewModel.currentEvent" (ngModelChange)="onChangeEvents($event)" >    
+      <option *ngFor="let event of reportViewModel.events" [ngValue]="event" >{{event.Name}}</option>
+    </select>
+  </div>
+  <div *ngIf="reportViewModel.currentEvent">
+    <table>
+      <thead>
+        <th>שם אירוע</th>
+        <th>מקום</th>
+        <th>מספר משתתפים</th>
+      </thead>
+      <tr>
+        <td>{{reportViewModel.currentEvent.Name}}</td>
+        <td>{{reportViewModel.currentEvent.Place}}</td>
+        <td>{{reportViewModel.currentEvent.NumTakePart}}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="reportViewModel.GuestsForCurrentEvent && reportViewModel.GuestsForCurrentEvent.length > 0">
+    <table>
+      <thead>
+        <th>שם מוזמן</th>
+        <th>מנה</th>
+      </thead>
+      <tr *ngFor="let guest of reportViewModel.GuestsForCurrentEvent">
+        <td>{{guest.poepleName}}</td>
+        <td>{{guest.nameMana}}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="reportViewModel.currentEvent && (!reportViewModel.GuestsForCurrentEvent || reportViewModel.GuestsForCurrentEvent.length == 0)">
+    אין משתתפים באירוע
+  </div>
+</div>

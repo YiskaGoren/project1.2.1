@@ -10,5 +10,6 @@ export class MenuViewModel{
     public id:number;
     public name: string;
     public  idSivog:number;
+    
 
   }
