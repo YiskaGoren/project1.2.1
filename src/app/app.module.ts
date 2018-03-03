@@ -22,7 +22,7 @@ import { ReportInviterComponent } from './report-inviter/report-inviter.componen
 
 
 const appRoutes: Routes=[
-  {path:'',component:OpenComponent},
+  {path:'open',component:OpenComponent},
   {path:'person' , component:PersonComponent},
   {path:'inveiter' , component:InveiterComponent},
   {path:'events' , component:EventsComponent},

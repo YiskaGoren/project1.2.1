@@ -28,9 +28,10 @@ export class PartyService {
     baseUrl: string = 'http://localhost:3000';
     currentInviterId:number;
     currentGuestId:number;
+    currentInviterName:string;
     currentPartyPartisipationId:number;
     currentPartyId:number;
-
+    counter:number;
    /* getEvent(): Observable<Events[]> {
         let Url = this.baseUrl + '/partys';
         let dbParty$ = this.httpClient.get<DbEvents[]>(Url);
@@ -209,6 +210,7 @@ export class PartyService {
             dbInviter = await this.httpClient.post<DbInviter>(this.baseUrl + '/inviter', dbInviter).toPromise();
         }
         this.currentInviterId = dbInviter.id;
+        this.currentInviterName = DbPeople.name;
     }
 
 
@@ -247,6 +249,7 @@ export class PartyService {
             let dbguestMake = new DbGuestMake();
             dbguestMake.idGuest = IdGuestMake;
             dbguestMake.idMana=element.id;
+            
             await this.httpClient.post<DbGuestMake[]>(this.baseUrl + '/guestMake', dbguestMake).toPromise();
         });
 

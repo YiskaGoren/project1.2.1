@@ -5,6 +5,7 @@ import { HtmlParser } from '@angular/compiler';
 import { Partisipation } from '../model/partisipation';
 import { Mana } from '../model/mana';
 import {Router} from "@angular/router";
+import { ViewGeustViewModel } from './viewGeustViewModel';
 
 @Component({
   selector: 'app-viewguest',
@@ -20,7 +21,9 @@ export class ViewguestComponent implements OnInit {
   private newGuestView :Partisipation = new Partisipation();
   private IdPartyForView: number=this.partyService.currentPartyPartisipationId;
   private IdGuestMake:number =this.partyService.currentGuestId;
-  n:number;
+  private vMGuest:ViewGeustViewModel[ ] = [];
+
+   n:number;
    constructor(private partyService: PartyService, private router: Router) {
      
     }

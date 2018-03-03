@@ -3,7 +3,7 @@ import {People} from '../model/people';
 import { Inviter } from '../model/inviter';
 import {PartyService} from '../data/party-service';
 import {Router} from "@angular/router";
-
+import { RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-inveiter',
@@ -14,6 +14,7 @@ export class InveiterComponent implements OnInit {
   private newInviter: People = new People();
 
   private errorAdd: boolean = false;
+  private success:boolean = false;
   private message: string = '';
   
   constructor(private partyService: PartyService, private router: Router) { }
@@ -32,7 +33,8 @@ export class InveiterComponent implements OnInit {
     }
     
     this.partyService.AddInviter(this.newInviter).then(()=>{
-        this.router.navigate(['events']); 
+        this.router.navigate(['events']);
+        RouterLinkActive
       });
       
       return true;
