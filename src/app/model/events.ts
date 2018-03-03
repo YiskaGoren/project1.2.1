@@ -41,6 +41,7 @@ export class Events{
     }
  
     private dateEvent: Date;
+    
     public get DateEvent() : Date {
         return this.dateEvent;
     }

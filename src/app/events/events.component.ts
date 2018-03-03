@@ -19,6 +19,7 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
     this.newEvents.IdInviter = this.partyService.currentInviterId;
     this.newInviter.name =this.partyService.currentInviterName;
+    //this.newEvents.DateEvent.
   }
 
   private AddEvent(){    

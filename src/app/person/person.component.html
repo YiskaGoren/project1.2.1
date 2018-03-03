@@ -1,43 +1,76 @@
-
-<p dir="rtl">
+<div class="contaner mt-4" style="text-align:center">
+    <h2 style="direction: rtl">פרטי אורח</h2>
+    <br/>
+<p dir="rtl" class="form-group">
 <label>
  שם:
-  <input type="text" [(ngModel)]="newGuest.name" name="name"/>
+  <input type="text" [(ngModel)]="newGuest.name" name="name" class="form-control"
+  #userName="ngModel"
+  minlength="2" required
+  placeholder="שם פרטי ומשפחה"
+  />
+
 </label>
 </p >
-<p dir="rtl">
+<div *ngIf="userName.errors?.required && userName.touched" class="alert alert-danger">
+    שם חובה 
+    </div>
+    <div *ngIf="userName.errors?.minlength && userName.touched" class="alert alert-danger">
+        נא הכנס שם תקין
+       </div>
+<p dir="rtl"  class="form-group">
     <label>
     תעודת זהות:
-      <input type="text" [(ngModel)]="newGuest.peopleId" name="peopleId"/>
+      <input type="text" [(ngModel)]="newGuest.peopleId" name="peopleId" class="form-control"
+      #usertz="ngModel"
+      minlength="9" required
+      placeholder="9 ספרות"
+      />
     </label>
     </p >
+    <div *ngIf="usertz.errors?.required && usertz.touched" class="alert alert-danger">
+        ת.ז. חובה
+      </div>
+      <div *ngIf="usertz.errors?.minlength && usertz.touched" class="alert alert-danger">
+       הכנס ערך תקין
+      </div>
+
 <p dir="rtl">
 <label>
  כתובת מייל:
-  <input type="text" [(ngModel)]="newGuest.mailAddress" name="mailAdress"/>
+  <input type="text" [(ngModel)]="newGuest.mailAddress" name="mailAdress" class="form-control"
+  #userMail="ngModel"
+  required
+  placeholder="name@example.com"
+  />
 </label>
 </p >
-<p dir="rtl">
+<div *ngIf="userMail.errors?.required && userMail.touched" class="alert alert-danger">
+    מייל חובה
+  </div>
+<p dir="rtl"  class="form-group">
 <label>
   טלפון:
-<input  type="text" [(ngModel)]="newGuest.phone" name="phone"/>
+<input  type="text" [(ngModel)]="newGuest.phone" name="phone" class="form-control" 
+placeholder="נייח/נייד"/>
 </label>
 <br/>
 <br/>
 
-
+<label dir="rtl"  id="sl" >שייכות לאירוע:</label>
+<br/>
 <select [(ngModel)]="newPartyType.Id">
   <option *ngFor="let party of partyType" value="{{party.id}}">{{party.name}}</option>
 </select>
 
 
-<label id="sl" >שייכות לאירוע</label>
+
 
 <label id="success" style="visibility:hidden ">הנתונים נקלטו בהצלחה!!</label>
 </p>
 <br/><br/>
 <button class="btn btn-primary" type="button" (click)="AddGuest()"  >המשך</button>
-
+</div>
 
 
 
