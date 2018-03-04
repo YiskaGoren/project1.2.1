@@ -118,7 +118,7 @@ export class PartyService {
         
                     for (let i = 0; i < DbMana.length; i++) {
                         let mana = new Mana();
-                        mana.id = dbMana[i].id;
+                        mana.Id = dbMana[i].id;
                         mana.idSivog = dbMana[i].idSivog;
                         mana.name = dbMana[i].nameMana;
                         mana.idParty = dbMana[i].idParty;        
@@ -244,19 +244,24 @@ export class PartyService {
 
     }
 
-    async AddGuestMake(manot:Mana[],IdGuestMake:number): Promise<void> 
+    async AddGuestMake(mana:Mana,IdGuestMake:number): Promise<void> 
     {
 
-        manot.forEach( async element => {
-            let dbguestMake = new DbGuestMake();
-            dbguestMake.idGuest = IdGuestMake;
-            dbguestMake.idMana=element.id;
-            
-            await this.httpClient.post<DbGuestMake[]>(this.baseUrl + '/guestMake', dbguestMake).toPromise();
-        });
+       let guestMakeUrl = this.baseUrl + '/guestMake?idMana=' + mana.Id;
+     ///  let manaUrl = this.baseUrl + '/manot?idMana=' + mana.Id;
+          let dbGuestMakes = await this.httpClient.get<DbGuestMake[]>(guestMakeUrl).toPromise();
+         // let dbManot = await this.httpClient.get<DbMana[]>(manaUrl).toPromise();
+         
+              let dbGuestMake = new DbGuestMake();
 
-
-    }
+              dbGuestMake.idMana = mana.Id;
+              dbGuestMake.idGuest = IdGuestMake;
+              let dbMana = new DbMana();
+             // mana.bool=true;
+             // dbMana.bool=mana.bool;
+              dbGuestMake = await this.httpClient.post<DbGuestMake>(this.baseUrl + '/guestMake', dbGuestMake).toPromise();
+              //dbMana = await this.httpClient.post<DbMana>(this.baseUrl + '/mana?bool', dbMana).toPromise();
+}
 
     GetMealTypes():Observable<Sivug[]>{
         let url = this.baseUrl + "/sivug";
@@ -280,7 +285,7 @@ export class PartyService {
         manot.forEach( async element => {
             let dbMana = new DbMana();
             dbMana.nameMana = element.name;
-            dbMana.id = element.id;
+            dbMana.id = element.Id;
             dbMana.idParty = element.idParty;
             dbMana.idSivog = element.idSivog;
             await this.httpClient.post<DbMana[]>(this.baseUrl + '/manot', dbMana).toPromise();

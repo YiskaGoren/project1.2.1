@@ -22,10 +22,11 @@ export class ViewguestComponent implements OnInit {
   private IdPartyForView: number=this.partyService.currentPartyPartisipationId;
   private IdGuestMake:number =this.partyService.currentGuestId;
   private vMGuest:ViewGeustViewModel[ ] = [];
-
+  private successAdd: boolean = false;
+  private message: string;
    n:number;
    constructor(private partyService: PartyService, private router: Router) {
-     
+     this.newManaToMake.bool=false;
     }
  
    ngOnInit() {
@@ -46,7 +47,9 @@ export class ViewguestComponent implements OnInit {
 
   private AddGuestMake(){    
     
-     this.partyService.AddGuestMake(this.manot,this.IdGuestMake).then(()=>{
+     this.partyService.AddGuestMake(this.newManaToMake,this.IdGuestMake).then(()=>{
+      this.successAdd = true;
+      this.message = 'תודה על הכנתך!';
         // this.router.navigate(['']); 
        });
        

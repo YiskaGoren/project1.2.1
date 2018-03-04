@@ -1,68 +1,35 @@
 <form class="contaner mt-4" style="text-align:center" novalidate #a="ngForm" >
 <h2> אורח יקר בחר מנה אותה תרצה </h2> 
 
-<!-- <select *ngFor="let mana of manot" >
 
-  <option *ngIf="mana.idParty==IdPartyForView"  value="{{mana.id}}">{{mana.nameMana}} </option>
-</select>   -->
+  <select *ngIf="newManaToMake.bool==false" [(ngModel)]="newManaToMake.Id" name="Id">
+    <option *ngFor="let mana of manot"  value="{{mana.id}}">{{mana.nameMana}} - {{mana.idSivog}}</option>
+  </select>
 
-
-
-
-<div class="form-check form-check-inline" *ngFor="let mana of manot"  ><br/>
-  <input *ngIf="mana.idParty==IdPartyForView" class="form-check-input"  type="checkbox" id="inlineCheckbox1" [(ngModel)]="mana.id" name="mana"  ><br/>
-  <label *ngIf="mana.idParty==IdPartyForView" class="form-check-label" for="inlineCheckbox1"  >{{mana.nameMana}}-{{mana.idSivog}}  id={{mana.id}}<br/></label><br/>
-<!-- <label>{{id}}</label> value="{{mana.id}}"-->
-
-</div>
 <br><br>
 <label>1 = מנה קטנה</label><br>
 <label>2 = מנה בינונית</label><br>
 <label>3 = מנה גדולה</label><br>
 <br/><br/><br/>
-<button class="btn btn-primary" type="button" (click)="AddGuestMake()"  >המשך</button>
+
+
+
+<!-- <div class="container">
+  
+  <br/><br/><br/><br/>            
+<button type="button" *ngIf="!message" class="btn btn-info btn-block" (click)="AddManot()"> סיום התהליך</button>
+<br/>
+<label style="text-align:center" class="alert alert-danger" id="seccess" *ngIf="successAdd" >{{message}}</label>
+<br/><br/>
+<button *ngIf="message"  routerLink="/">המשך</button>
+</div> -->
+
+<div class="container">
+<button *ngIf="!message" class="btn btn-primary" type="button" (click)="AddGuestMake()"  >אישור</button>
+
+<label style="text-align:center" class="alert alert-danger" id="seccess" *ngIf="successAdd" >{{message}}</label>
+<br/><br/>
+<button *ngIf="message"  routerLink="/">המשך</button>
+</div>
 </form>
 
-
-<!-- <form class="was-validated">
-  <div class="custom-control custom-checkbox mb-3">
-    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-    <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
-   
-  </div>
-</form> -->
-<!-- <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-  <label class="form-check-label" for="inlineCheckbox2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-</div> -->
-
-<!-- <div class="col-auto my-1">
-  <div class="custom-control custom-checkbox mr-sm-2">
-    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-    <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
-  </div>
-</div>
-
-<div class="custom-control custom-checkbox mb-3">
-  <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-  <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
-  <div class="invalid-feedback">Example invalid feedback text</div>
-</div>
-
-
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
-</div>
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
-</div> -->
-
-
-
- 

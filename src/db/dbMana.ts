@@ -4,7 +4,6 @@ export class DbMana
     idSivog:number;
     idParty:number;
     nameMana:string;
-    
-    
-
+    idGuest:number;
+    bool:boolean;
 }
