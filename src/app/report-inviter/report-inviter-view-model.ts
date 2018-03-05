@@ -10,4 +10,5 @@ export class ReportInviterViewModel{
 export class GuestAndManaViewModel{
     public poepleName:string;
     public nameMana:string;
+    public volunteeringName:string;
 }

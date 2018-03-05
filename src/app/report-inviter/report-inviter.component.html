@@ -8,7 +8,7 @@
     </select>
   </div>
   <div *ngIf="reportViewModel.currentEvent">
-    <table>
+    <table class="table eventTable">
       <thead>
         <th>שם אירוע</th>
         <th>מקום</th>
@@ -22,14 +22,16 @@
     </table>
   </div>
   <div *ngIf="reportViewModel.GuestsForCurrentEvent && reportViewModel.GuestsForCurrentEvent.length > 0">
-    <table>
+    <table class="table guestsTable">
       <thead>
         <th>שם מוזמן</th>
         <th>מנה</th>
+        <th>התנדבות</th>
       </thead>
       <tr *ngFor="let guest of reportViewModel.GuestsForCurrentEvent">
         <td>{{guest.poepleName}}</td>
         <td>{{guest.nameMana}}</td>
+        <td>{{guest.volunteeringName || "-"}}</td>
       </tr>
     </table>
   </div>

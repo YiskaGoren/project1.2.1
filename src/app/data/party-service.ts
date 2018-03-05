@@ -332,13 +332,27 @@ export class PartyService {
             dbPartisipation.forEach(async (partisipation)=>{
                 var dbGuest = await this.httpClient.get<DbGuest[]>(this.baseUrl+'/guest?id='+partisipation.idGuest).toPromise();
                 if(dbGuest.length > 0){
-                   var dbPeople = await this.httpClient.get<DbPeople[]>(this.baseUrl+'/people?id='+dbGuest[0].idPeapleTable).toPromise();
-                   if(dbPeople.length >0) {
                     let guestAndManaViewModel = new GuestAndManaViewModel();
+                   var dbPeople = await this.httpClient.get<DbPeople[]>(this.baseUrl+'/people?id='+dbGuest[0].idPeapleTable).toPromise();
+                   if(dbPeople.length >0) {                   
                     guestAndManaViewModel.poepleName = dbPeople[0].name;
-                    reportVM.GuestsForCurrentEvent.push(guestAndManaViewModel);
                    }
+                   let dbManot = await this.httpClient.get<DbMana[]>(this.baseUrl+'/manot?idGuest=' + partisipation.idGuest).toPromise();
+                   if(dbManot.length > 0){
+                       dbManot.forEach(async(mana)=>{
+                        if(mana.idSivog != 0){
+                            guestAndManaViewModel.nameMana = mana.nameMana;
+                        }
+                        else{
+                            guestAndManaViewModel.volunteeringName = mana.nameMana;
+                        }
+                       });
+                   }
+                   
+                   reportVM.GuestsForCurrentEvent.push(guestAndManaViewModel);
+                   
                 }
+                
             });
         }
         return reportVM;
