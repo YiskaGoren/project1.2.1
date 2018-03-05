@@ -654,6 +654,115 @@
       "idGuest": 96,
       "idParty": "25",
       "id": 132
+    },
+    {
+      "idGuest": 97,
+      "idParty": "26",
+      "id": 133
+    },
+    {
+      "idGuest": 98,
+      "idParty": "26",
+      "id": 134
+    },
+    {
+      "idGuest": 99,
+      "idParty": "26",
+      "id": 135
+    },
+    {
+      "idGuest": 100,
+      "idParty": "26",
+      "id": 136
+    },
+    {
+      "idGuest": 101,
+      "idParty": "26",
+      "id": 137
+    },
+    {
+      "idGuest": 102,
+      "id": 138
+    },
+    {
+      "idGuest": 103,
+      "idParty": "26",
+      "id": 139
+    },
+    {
+      "idGuest": 104,
+      "idParty": "17",
+      "id": 140
+    },
+    {
+      "idGuest": 105,
+      "idParty": "17",
+      "id": 141
+    },
+    {
+      "idGuest": 106,
+      "idParty": "28",
+      "id": 142
+    },
+    {
+      "idGuest": 107,
+      "idParty": "28",
+      "id": 143
+    },
+    {
+      "idGuest": 108,
+      "idParty": "28",
+      "id": 144
+    },
+    {
+      "idGuest": 109,
+      "idParty": "28",
+      "id": 145
+    },
+    {
+      "idGuest": 110,
+      "idParty": "26",
+      "id": 146
+    },
+    {
+      "idGuest": 111,
+      "idParty": "3",
+      "id": 147
+    },
+    {
+      "idGuest": 112,
+      "idParty": "29",
+      "id": 148
+    },
+    {
+      "idGuest": 113,
+      "idParty": "30",
+      "id": 149
+    },
+    {
+      "idGuest": 114,
+      "idParty": "30",
+      "id": 150
+    },
+    {
+      "idGuest": 115,
+      "idParty": "30",
+      "id": 151
+    },
+    {
+      "idGuest": 116,
+      "idParty": "30",
+      "id": 152
+    },
+    {
+      "idGuest": 117,
+      "idParty": "29",
+      "id": 153
+    },
+    {
+      "idGuest": 118,
+      "idParty": "31",
+      "id": 154
     }
   ],
   "partys": [
@@ -854,6 +963,54 @@
       "meatMilk": "בשרי",
       "idInviter": 14,
       "id": 25
+    },
+    {
+      "name": "מסיבת גמר",
+      "dateEvent": "2018-03-28",
+      "numTackPart": "10",
+      "place": "חזקיה שבתאי 13",
+      "meatMilk": "חלבי",
+      "idInviter": 16,
+      "id": 26
+    },
+    {
+      "idInviter": 18,
+      "id": 27
+    },
+    {
+      "name": "מסיבת סידור",
+      "dateEvent": "2018-03-29",
+      "numTackPart": 3,
+      "place": "הה",
+      "meatMilk": "חלבי",
+      "idInviter": 19,
+      "id": 28
+    },
+    {
+      "name": "גגגגגג",
+      "dateEvent": "2018-03-27",
+      "numTackPart": 3,
+      "place": "ג",
+      "meatMilk": "חלבי",
+      "id": 29
+    },
+    {
+      "name": "לללל",
+      "dateEvent": "2018-03-29",
+      "numTackPart": 3,
+      "place": "לל",
+      "meatMilk": "בשרי",
+      "idInviter": 20,
+      "id": 30
+    },
+    {
+      "name": "ווווווווווווו",
+      "dateEvent": "2018-03-15",
+      "numTackPart": 2,
+      "place": "ו",
+      "meatMilk": "בשרי",
+      "idInviter": 21,
+      "id": 31
     }
   ],
   "people": [
@@ -1266,6 +1423,94 @@
       "mailAddress": "h",
       "tz": "123456788",
       "id": 78
+    },
+    {
+      "name": "יהודיתדרוק",
+      "mailAddress": "y@gmail.com",
+      "tz": "222222222",
+      "id": 79
+    },
+    {
+      "name": "יצחק לוי",
+      "mailAddress": "w@gmail.com",
+      "tz": "666666666",
+      "id": 80
+    },
+    {
+      "name": "חיים",
+      "phone": "77777777",
+      "mailAddress": "s@gmail.com",
+      "tz": "999999999",
+      "id": 81
+    },
+    {
+      "name": "משה",
+      "mailAddress": "Y@dd.com",
+      "tz": "444444444",
+      "id": 82
+    },
+    {
+      "name": "יפה",
+      "mailAddress": "sw@gmail.com",
+      "tz": "532222222",
+      "id": 83
+    },
+    {
+      "name": "חיה",
+      "mailAddress": "yiska@outlook.com",
+      "tz": "777777777",
+      "id": 84
+    },
+    {
+      "id": 85
+    },
+    {
+      "name": "שירה",
+      "mailAddress": "d@l.f",
+      "tz": "222222223",
+      "id": 86
+    },
+    {
+      "name": "דד",
+      "mailAddress": "ג",
+      "tz": "233333333",
+      "id": 87
+    },
+    {
+      "name": " כה",
+      "mailAddress": "י",
+      "tz": "334344444",
+      "id": 88
+    },
+    {
+      "name": "בב",
+      "mailAddress": "ר",
+      "tz": "344444444",
+      "id": 89
+    },
+    {
+      "name": "ענ",
+      "mailAddress": "ט",
+      "tz": "766666666",
+      "id": 90
+    },
+    {
+      "name": "ךך",
+      "mailAddress": "ם",
+      "tz": "177777777",
+      "id": 91
+    },
+    {
+      "name": "עע",
+      "mailAddress": "9",
+      "tz": "054965046",
+      "id": 92
+    },
+    {
+      "name": "נננ",
+      "mailAddress": "ל",
+      "tz": "111111111",
+      "id": 93
     }
   ],
   "guest": [
@@ -1652,6 +1897,94 @@
     {
       "idPeapleTable": 62,
       "id": 96
+    },
+    {
+      "idPeapleTable": 79,
+      "id": 97
+    },
+    {
+      "idPeapleTable": 80,
+      "id": 98
+    },
+    {
+      "idPeapleTable": 81,
+      "id": 99
+    },
+    {
+      "idPeapleTable": 82,
+      "id": 100
+    },
+    {
+      "idPeapleTable": 83,
+      "id": 101
+    },
+    {
+      "idPeapleTable": 85,
+      "id": 102
+    },
+    {
+      "idPeapleTable": 80,
+      "id": 103
+    },
+    {
+      "idPeapleTable": 86,
+      "id": 104
+    },
+    {
+      "idPeapleTable": 87,
+      "id": 105
+    },
+    {
+      "idPeapleTable": 82,
+      "id": 106
+    },
+    {
+      "idPeapleTable": 88,
+      "id": 107
+    },
+    {
+      "idPeapleTable": 89,
+      "id": 108
+    },
+    {
+      "idPeapleTable": 67,
+      "id": 109
+    },
+    {
+      "idPeapleTable": 90,
+      "id": 110
+    },
+    {
+      "idPeapleTable": 84,
+      "id": 111
+    },
+    {
+      "idPeapleTable": 91,
+      "id": 112
+    },
+    {
+      "idPeapleTable": 92,
+      "id": 113
+    },
+    {
+      "idPeapleTable": 84,
+      "id": 114
+    },
+    {
+      "idPeapleTable": 84,
+      "id": 115
+    },
+    {
+      "idPeapleTable": 84,
+      "id": 116
+    },
+    {
+      "idPeapleTable": 84,
+      "id": 117
+    },
+    {
+      "idPeapleTable": 67,
+      "id": 118
     }
   ],
   "inviter": [
@@ -1714,6 +2047,30 @@
     {
       "idPeapleTable": 67,
       "id": 15
+    },
+    {
+      "idPeapleTable": 53,
+      "id": 16
+    },
+    {
+      "idPeapleTable": 84,
+      "id": 17
+    },
+    {
+      "idPeapleTable": 79,
+      "id": 18
+    },
+    {
+      "idPeapleTable": 84,
+      "id": 19
+    },
+    {
+      "idPeapleTable": 80,
+      "id": 20
+    },
+    {
+      "idPeapleTable": 93,
+      "id": 21
     }
   ],
   "manot": [
@@ -1801,21 +2158,137 @@
     {
       "idGuest": 96,
       "id": 19
+    },
+    {
+      "nameMana": "סלטים",
+      "idParty": 26,
+      "idSivog": "2",
+      "idGuest": 98,
+      "id": 20
+    },
+    {
+      "nameMana": "פשטידה",
+      "idParty": 26,
+      "idSivog": "3",
+      "idGuest": 99,
+      "id": 21
+    },
+    {
+      "nameMana": "טוסטים",
+      "idParty": 26,
+      "idSivog": "3",
+      "idGuest": 100,
+      "id": 22
+    },
+    {
+      "nameMana": "סלטי שמיר",
+      "idParty": 26,
+      "idSivog": "1",
+      "idGuest": 97,
+      "id": 23
+    },
+    {
+      "nameMana": "משחקי חברה",
+      "idParty": 26,
+      "idSivog": 0,
+      "idGuest": 97,
+      "id": 24
+    },
+    {
+      "nameMana": "מרק עוף",
+      "idParty": 28,
+      "idSivog": "2",
+      "idGuest": 0,
+      "id": 25
+    },
+    {
+      "nameMana": "אורז",
+      "idParty": 28,
+      "idSivog": "1",
+      "idGuest": 0,
+      "id": 26
+    },
+    {
+      "nameMana": "קינוח",
+      "idParty": 28,
+      "idSivog": "3",
+      "idGuest": 106,
+      "id": 27
+    },
+    {
+      "idGuest": 0,
+      "id": 28
+    },
+    {
+      "nameMana": "ששש",
+      "idParty": 29,
+      "idSivog": "3",
+      "idGuest": 117,
+      "id": 29
+    },
+    {
+      "nameMana": "חחח",
+      "idParty": 29,
+      "idSivog": "3",
+      "idGuest": 112,
+      "id": 30
+    },
+    {
+      "nameMana": "קינוח",
+      "idParty": 30,
+      "idSivog": "1",
+      "idGuest": 0,
+      "id": 31
+    },
+    {
+      "nameMana": "תפוזים",
+      "idParty": 30,
+      "idSivog": "2",
+      "idGuest": 0,
+      "id": 32
+    },
+    {
+      "idParty": 30,
+      "idGuest": 0,
+      "id": 33
+    },
+    {
+      "nameMana": "גדול",
+      "idParty": 31,
+      "idSivog": "1",
+      "idGuest": 0,
+      "id": 34
+    },
+    {
+      "nameMana": "בינוני",
+      "idParty": 31,
+      "idSivog": "2",
+      "idGuest": 0,
+      "id": 35
+    },
+    {
+      "nameMana": "קטן",
+      "idParty": 31,
+      "idSivog": "3",
+      "idGuest": 0,
+      "id": 36
     }
   ],
   "sivug": [
     {
       "id": 1,
-      "name": "מנה גדולה"
+      "name": "מנה קטנה"
     },
+    
     {
       "id": 2,
       "name": "מנה בינונית"
     },
     {
       "id": 3,
-      "name": "מנה קטנה"
+      "name": "מנה גדולה"
     }
+   
   ],
   "guestMake": [
     {

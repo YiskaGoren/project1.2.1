@@ -26,7 +26,7 @@ export class InveiterComponent implements OnInit {
 
   private AddInviter(){    
    
-    if(!this.newInviter.name || !this.newInviter.peopleId || !this.newInviter.mailAddress || !this.newInviter.phone){
+    if(!this.newInviter.name || !this.newInviter.peopleId || !this.newInviter.mailAddress ){
       this.errorAdd = true;
       this.message = 'נא מלא את כל השדות';
       return false;

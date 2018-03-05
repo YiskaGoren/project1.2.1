@@ -36,7 +36,7 @@
         <div *ngIf="usertz.errors?.required && usertz.touched" class="alert alert-danger">
           ת.ז. חובה
         </div>
-        <div *ngIf="usertz.errors?.minlength && usertz.errors?.maxlength && usertz.touched" class="alert alert-danger">
+        <div *ngIf="usertz.errors?.minlength && usertz.touched" class="alert alert-danger">
          הכנס ערך תקין
         </div>
 
@@ -65,10 +65,7 @@
     <br/>
     <button class="btn btn-primary" type="button" (click)="AddInviter()" >המשך</button>
    
-    <br/><br/>
-        <label class="form-check-label">זכור אותי
-        <input type="checkbox" name="checkbox"/></label>
-        <br/>
+   
         
         <label id="success" *ngIf="success" >{{massageOk}}</label>
 

@@ -6,6 +6,7 @@ import { Partisipation } from '../model/partisipation';
 import { Mana } from '../model/mana';
 import {Router} from "@angular/router";
 import { ViewGeustViewModel } from './viewGeustViewModel';
+import { People } from '../model/people';
 
 @Component({
   selector: 'app-viewguest',
@@ -26,6 +27,8 @@ export class ViewguestComponent implements OnInit {
   private successAdd: boolean = false;
   private successChecked: boolean = false;
   private message: string;
+  private newGuest:People = new People();
+  private stringName:string='';
    n:number;
    constructor(private partyService: PartyService, private router: Router) {
      
@@ -35,7 +38,10 @@ export class ViewguestComponent implements OnInit {
   
     this.n=21; 
     // this.IdPartyForView=this.partyService.currentPartyPartisipationId;
-     console.log("kk"+this.IdPartyForView);
+    this.newGuest.name =this.partyService.currentGuestName;
+    
+     this.stringName=this.newGuest.name;
+     //console.log("name g:"+)
      this.GetMenuForChoose();
   }
 

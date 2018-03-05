@@ -1,15 +1,16 @@
 <form class="contaner mt-4" style="text-align:center" novalidate #a="ngForm" >
-<h2> אורח יקר בחר מנה אותה תרצה להכין </h2> 
+  <h2 >שלום {{stringName}} בחר מתוך התפריט מה תרצה להכין </h2> 
 
 
   <select [(ngModel)]="newManaToMake" name="mana" (change)="onSelectMana(newManaToMake)" >
-    <option *ngFor="let mana of manot"  [ngValue]="mana">{{mana.nameMana}} - {{mana.idSivog}}
+    <option *ngFor="let mana of manot"  [ngValue]="mana">{{mana.nameMana}} -סיווג  {{mana.idSivog}}
 
     </option>
   </select>
   <div *ngIf="newManaToMake && newManaToMake.idSivog == 1" >
-    <label>התנדבות נוספת</label>
-    <input id="new" name="volunteering" [(ngModel)]="volunteering.name"  />
+    <br/>
+    <label dir="rtl" > התנדבות נוספת</label>
+    <input  style="text-align:center" id="new" name="volunteering" [(ngModel)]="volunteering.name"  />
   </div>
 <br><br>
 <label>1 = מנה קטנה</label><br>
@@ -36,7 +37,7 @@
 
 <label style="text-align:center" class="alert alert-danger" id="seccess" *ngIf="successAdd" >{{message}}</label>
 <br/><br/>
-<button *ngIf="message"  (click)="addNew()" routerLink="/">המשך</button>
+<button class="btn btn-primary" *ngIf="message"  (click)="addNew()" routerLink="/">המשך</button>
 </div>
 </form>
 

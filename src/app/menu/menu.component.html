@@ -1,3 +1,8 @@
+
+<h2 style="text-align: center">שלום {{stringName}} בחר את התפריט האהוב עליך לאירוע  {{stringEvent}}</h2>
+<br/>
+<div style="text-align:right">
+  
   <ul class="manot">
 
     <li *ngFor="let mana of manot">
@@ -9,17 +14,20 @@
         </select>
      
   
-     <button class="" title="מחיקת מנה" (click)="delete()">x</button>
+     <button class="btn btn-warning" title="מחיקת מנה" (click)="delete()">x</button>
     </li>
   </ul>
 
-  <button (click)="addNew()">
+  <button class="btn btn-primary" (click)="addNew()">
     הוספה
   </button> 
   <div class="container">
       
                 
     <button type="button" *ngIf="!message" class="btn btn-info btn-block" (click)="AddManot()"> סיום התהליך</button>
-    <label id="seccess" *ngIf="successAdd" >{{message}}</label>
+    <label style="text-align:center" class="alert alert-danger" id="seccess" *ngIf="successAdd" >{{message}}</label>
+    <br/><br/>
+    <button class="btn btn-primary" *ngIf="message"  routerLink="/">המשך</button>
+  </div>
   </div>
 

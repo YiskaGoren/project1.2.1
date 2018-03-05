@@ -12,14 +12,15 @@ import { People } from '../model/people';
 })
 
 export class EventsComponent implements OnInit {
-  private newEvents: Events = new Events();
+ private newEvents: Events = new Events();
  private newInviter:People = new People();
+ private stringName:string='';
   constructor(private partyService: PartyService, private router: Router) { }
 
   ngOnInit() {
     this.newEvents.IdInviter = this.partyService.currentInviterId;
     this.newInviter.name =this.partyService.currentInviterName;
-    //this.newEvents.DateEvent.
+    this.stringName=this.newInviter.name;
   }
 
   private AddEvent(){    

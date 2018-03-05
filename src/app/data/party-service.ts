@@ -29,6 +29,8 @@ export class PartyService {
     currentInviterId:number;
     currentGuestId:number;
     currentInviterName:string;
+    currentGuestName:string;
+    currentEventName:string;
     currentPartyPartisipationId:number;
     currentPartyId:number;
     counter:number;
@@ -187,6 +189,9 @@ export class PartyService {
 
           this.currentGuestId = dbPartisipation.idGuest;
           this.currentPartyPartisipationId=dbPartisipation.idParty;
+
+         
+          this.currentGuestName = personVM.name;
     }
 
 
@@ -211,7 +216,7 @@ export class PartyService {
             dbInviter = await this.httpClient.post<DbInviter>(this.baseUrl + '/inviter', dbInviter).toPromise();
         }
         this.currentInviterId = dbInviter.id;
-        this.currentInviterName = DbPeople.name;
+        this.currentInviterName = personVM.name;
     }
 
 
@@ -240,6 +245,7 @@ export class PartyService {
         dbEvent.idInviter = eventM.IdInviter;
         dbEvent = await this.httpClient.post<DbEvents>(this.baseUrl + '/partys', dbEvent).toPromise();
         this.currentPartyId = dbEvent.id;
+        this.currentEventName=eventM.Name;
 
     }
 
