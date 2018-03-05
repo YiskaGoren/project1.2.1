@@ -11,7 +11,6 @@ import { DbMana } from '../../db/dbMana';
 import 'rxjs/add/operator/combineLatest';
 import { GuestViewModel } from "../person/guest-view-model";
 
-import {MenuViewModel } from '../menu/menu-view-model'
 import { Events } from "../model/events";
 import { DbEvents } from "../../db/dbEvents";
 import { People } from "../model/people";

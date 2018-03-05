@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PartyService} from '../data/party-service'
 import {Mana} from '../model/mana'
-import {MenuViewModel} from './menu-view-model'
 import { Sivug } from '../model/sivug';
   
 
