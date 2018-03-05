@@ -2,12 +2,15 @@
 <h2> אורח יקר בחר מנה אותה תרצה להכין </h2> 
 
 
-  <select [(ngModel)]="newManaToMake.id" name="mana" >
-    <option *ngFor="let mana of manot"  value="{{mana.id}}">{{mana.nameMana}} - {{mana.idSivog}}
+  <select [(ngModel)]="newManaToMake" name="mana" (change)="onSelectMana(newManaToMake)" >
+    <option *ngFor="let mana of manot"  [ngValue]="mana">{{mana.nameMana}} - {{mana.idSivog}}
 
     </option>
   </select>
-
+  <div *ngIf="newManaToMake && newManaToMake.idSivog == 1" >
+    <label>התנדבות נוספת</label>
+    <input id="new" name="volunteering" [(ngModel)]="volunteering.name"  />
+  </div>
 <br><br>
 <label>1 = מנה קטנה</label><br>
 <label>2 = מנה בינונית</label><br>
@@ -29,7 +32,7 @@
 <div class="container">
 <button *ngIf="!message" class="btn btn-primary" type="button" (click)="AddGuestMake()"  >אישור</button>
 
-<input type="text" *ngIf="newManaToMake.idSivog==1" />
+
 
 <label style="text-align:center" class="alert alert-danger" id="seccess" *ngIf="successAdd" >{{message}}</label>
 <br/><br/>

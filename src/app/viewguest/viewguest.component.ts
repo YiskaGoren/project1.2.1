@@ -17,7 +17,8 @@ import { ViewGeustViewModel } from './viewGeustViewModel';
 export class ViewguestComponent implements OnInit {
   private partyType: Events[] = [];
   private manot: Mana[] = [];
-  private newManaToMake: Mana = new Mana();
+  private newManaToMake: Mana;
+  private volunteering: Mana;
   private newGuestView :Partisipation = new Partisipation();
   private IdPartyForView: number=this.partyService.currentPartyPartisipationId;
   private IdGuestMake:number =this.partyService.currentGuestId;
@@ -27,7 +28,7 @@ export class ViewguestComponent implements OnInit {
   private message: string;
    n:number;
    constructor(private partyService: PartyService, private router: Router) {
-     this.newManaToMake.bool=false;
+     
     }
  
    ngOnInit() {
@@ -46,9 +47,20 @@ export class ViewguestComponent implements OnInit {
     });
   }
 
+  private onSelectMana(newManaToMake){
+    if(newManaToMake.idSivog == 1){
+      this.volunteering =  new Mana();
+      this.volunteering.idGuest = this.IdGuestMake;
+      this.volunteering.idParty = this.newManaToMake.idParty;
+    }
+    else
+      this.volunteering = null;
+  }
+
   private AddGuestMake(){    
     this.newManaToMake;
-     this.partyService.AddGuestMake(this.newManaToMake,this.IdGuestMake,this.manot).then(()=>{
+    
+     this.partyService.AddGuestMake(this.newManaToMake,this.IdGuestMake, this.volunteering).then(()=>{
       this.newManaToMake= new Mana();
       console.log("120154"+this.newManaToMake.id);
       if(this.newManaToMake.idSivog==1)
