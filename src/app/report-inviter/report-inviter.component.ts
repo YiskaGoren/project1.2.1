@@ -13,17 +13,10 @@ export class ReportInviterComponent implements OnInit {
   private reportViewModel:ReportInviterViewModel= new ReportInviterViewModel();
   ngOnInit() {
   }
-    onBlurTz(){
-      this.partyService.GetEventsByTz(this.reportViewModel).then((vm)=>{
-
-      console.log(vm);
-      });
+  onBlurTz(){
+      this.partyService.GetEventsByTz(this.reportViewModel);
   }
   onChangeEvents(currentEvent) {
-    console.log(currentEvent);
-    this.partyService.GetGuestAndManaByEventId(this.reportViewModel).then((vm)=>{
-
-      console.log(vm);
-      });
+    this.partyService.GetGuestAndManaByEventId(this.reportViewModel);
   }
 }
