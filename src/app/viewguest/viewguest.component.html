@@ -1,9 +1,11 @@
 <form class="contaner mt-4" style="text-align:center" novalidate #a="ngForm" >
-<h2> אורח יקר בחר מנה אותה תרצה </h2> 
+<h2> אורח יקר בחר מנה אותה תרצה להכין </h2> 
 
 
-  <select *ngIf="newManaToMake.bool==false" [(ngModel)]="newManaToMake.Id" name="Id">
-    <option *ngFor="let mana of manot"  value="{{mana.id}}">{{mana.nameMana}} - {{mana.idSivog}}</option>
+  <select [(ngModel)]="newManaToMake.id" name="mana" >
+    <option *ngFor="let mana of manot"  value="{{mana.id}}">{{mana.nameMana}} - {{mana.idSivog}}
+
+    </option>
   </select>
 
 <br><br>
@@ -27,9 +29,11 @@
 <div class="container">
 <button *ngIf="!message" class="btn btn-primary" type="button" (click)="AddGuestMake()"  >אישור</button>
 
+<input type="text" *ngIf="newManaToMake.idSivog==1" />
+
 <label style="text-align:center" class="alert alert-danger" id="seccess" *ngIf="successAdd" >{{message}}</label>
 <br/><br/>
-<button *ngIf="message"  routerLink="/">המשך</button>
+<button *ngIf="message"  (click)="addNew()" routerLink="/">המשך</button>
 </div>
 </form>
 

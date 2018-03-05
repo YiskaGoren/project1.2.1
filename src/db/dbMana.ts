@@ -5,5 +5,5 @@ export class DbMana
     idParty:number;
     nameMana:string;
     idGuest:number;
-    bool:boolean;
+   // bool:boolean;
 }

@@ -244,23 +244,48 @@ export class PartyService {
 
     }
 
-    async AddGuestMake(mana:Mana,IdGuestMake:number): Promise<void> 
+    async AddGuestMake(mana:Mana,IdGuestMake:number,manot:Mana[]): Promise<void> 
     {
+         let idManaUrl = this.baseUrl + '/manot?idMana=' + mana.Id;
+         let dbManaUrl = await this.httpClient.get<DbMana[]>(idManaUrl).toPromise();
+        // manot.forEach( async element => {
+        // if(element.Id==mana.Id){
+        //     console.log("element.Id:"+element.Id+"mana.Id"+mana.Id);
+        //         // let GuestId = this.baseUrl + '/manot?idGuest' + IdGuestMake;       
+        //         // await this.httpClient.get<DbMana[]>(GuestId).toPromise();    
+                
+        //     }
+        //  });
+        let dbMana: DbMana;
+        
+        dbMana = new DbMana();
+        dbMana.idGuest=IdGuestMake;
 
-       let guestMakeUrl = this.baseUrl + '/guestMake?idMana=' + mana.Id;
-     ///  let manaUrl = this.baseUrl + '/manot?idMana=' + mana.Id;
-          let dbGuestMakes = await this.httpClient.get<DbGuestMake[]>(guestMakeUrl).toPromise();
-         // let dbManot = await this.httpClient.get<DbMana[]>(manaUrl).toPromise();
+
+         await this.httpClient.post<DbMana[]>(this.baseUrl + '/manot', dbMana).toPromise();
+
+
+
+
+
+    //    let guestMakeUrl = this.baseUrl + '/guestMake?idMana=' + mana.Id;
+    //  ///  let manaUrl = this.baseUrl + '/manot?idMana=' + mana.Id;
+    //       let dbGuestMakes = await this.httpClient.get<DbGuestMake[]>(guestMakeUrl).toPromise();
+    //      // let dbManot = await this.httpClient.get<DbMana[]>(manaUrl).toPromise();
          
-              let dbGuestMake = new DbGuestMake();
+    //           let dbGuestMake = new DbGuestMake();
 
-              dbGuestMake.idMana = mana.Id;
-              dbGuestMake.idGuest = IdGuestMake;
-              let dbMana = new DbMana();
-             // mana.bool=true;
-             // dbMana.bool=mana.bool;
-              dbGuestMake = await this.httpClient.post<DbGuestMake>(this.baseUrl + '/guestMake', dbGuestMake).toPromise();
-              //dbMana = await this.httpClient.post<DbMana>(this.baseUrl + '/mana?bool', dbMana).toPromise();
+    //           dbGuestMake.idMana = mana.Id;
+    //           dbGuestMake.idGuest = IdGuestMake;
+    //           let dbMana = new DbMana();
+    //          // mana.bool=true;
+    //          // dbMana.bool=mana.bool;
+    //           dbGuestMake = await this.httpClient.post<DbGuestMake>(this.baseUrl + '/guestMake', dbGuestMake).toPromise();
+    //           //dbMana = await this.httpClient.post<DbMana>(this.baseUrl + '/mana?bool', dbMana).toPromise();
+
+
+
+
 }
 
     GetMealTypes():Observable<Sivug[]>{
@@ -288,6 +313,7 @@ export class PartyService {
             dbMana.id = element.Id;
             dbMana.idParty = element.idParty;
             dbMana.idSivog = element.idSivog;
+            dbMana.idGuest = 0;
             await this.httpClient.post<DbMana[]>(this.baseUrl + '/manot', dbMana).toPromise();
         });
 

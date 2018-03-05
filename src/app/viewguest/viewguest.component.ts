@@ -23,6 +23,7 @@ export class ViewguestComponent implements OnInit {
   private IdGuestMake:number =this.partyService.currentGuestId;
   private vMGuest:ViewGeustViewModel[ ] = [];
   private successAdd: boolean = false;
+  private successChecked: boolean = false;
   private message: string;
    n:number;
    constructor(private partyService: PartyService, private router: Router) {
@@ -46,8 +47,14 @@ export class ViewguestComponent implements OnInit {
   }
 
   private AddGuestMake(){    
-    
-     this.partyService.AddGuestMake(this.newManaToMake,this.IdGuestMake).then(()=>{
+    this.newManaToMake;
+     this.partyService.AddGuestMake(this.newManaToMake,this.IdGuestMake,this.manot).then(()=>{
+      this.newManaToMake= new Mana();
+      console.log("120154"+this.newManaToMake.id);
+      if(this.newManaToMake.idSivog==1)
+     {
+        this.successAdd=true;
+     }
       this.successAdd = true;
       this.message = 'תודה על הכנתך!';
         // this.router.navigate(['']); 
