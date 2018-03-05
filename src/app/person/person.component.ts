@@ -59,10 +59,9 @@ private partisipation = new Partisipation();
 
 
       private GetParty(){
-        this.partyService.GetParty().subscribe(partyType=>{
+        this.partyService.GetParty().then(partyType=>{
           this.partyType = partyType;
-         
-        });
+         });
 
       }
 

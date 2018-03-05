@@ -269,11 +269,36 @@ export class PartyService {
         return this.httpClient.get<Sivug[]>(url);        
     }
 
-    GetParty():Observable<Events[]>{
+    async GetParty(){
         let url = this.baseUrl + "/partys";
       // let dbMana$ = this.httpClient.get<DbMana[]>(manaUrl);
-        return this.httpClient.get<Events[]>(url);
-        
+      let dbEvents = await this.httpClient.get<DbEvents[]>(url).toPromise();
+    
+        let events:Events[] =  [];
+        dbEvents.forEach(async(item)=>{
+            let event = new Events();
+            event.Id = item.id;
+            event.IdInviter = item.idInviter;
+            event.Name = item.name;
+            event.Place = item.place;
+            event.DateEvent = item.dateEvent;   
+            event.NumTakePart = item.numTackPart;
+            event.MilkMeat =  item.meatMilk;
+            let today = new Date();
+            let dateEvent:Date = new Date(item.dateEvent);
+            if(dateEvent <  today){ return; }
+            let numGuest:number;
+            var dbPartisipation = await this.httpClient.get<DbPartisipation[]>(this.baseUrl + '/partisipation?idParty='+ event.Id).toPromise();
+            if(dbPartisipation.length > event.NumTakePart){
+                return;
+            } 
+            events.push(event);
+        });
+    
+        return  events;        
+    }
+    async GetCountOfEvent(partyId:number){
+        return ;
     }
    GetMenuForChoose(IdPartyForView:number):Observable<Mana[]>{
      
