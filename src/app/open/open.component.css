@@ -1,7 +1,9 @@
 .open{
-    background-image: url("image1.jpg");
+    background-image: url("Katzefet.jpg");
     background-repeat: no-repeat;
     height: 750px;
-        text-align: center;
+        text-align: left;
+        font-style: counter-reset  #ffffff ;
     width: 1000px;
+   
 }

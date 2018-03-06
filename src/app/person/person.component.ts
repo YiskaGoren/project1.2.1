@@ -22,7 +22,9 @@ private guests: People[] = [];
 private partisipation = new Partisipation();
  private partyType: Events[] = [];
  private newPartyType: Events = new Events();
- 
+ private errorAdd: boolean = false;
+ private success:boolean = false;
+ private message: string = '';
   constructor(private partyService: PartyService, private router: Router) {
     
    }
@@ -35,7 +37,12 @@ private partisipation = new Partisipation();
       this.guests = guests;
     });
   } 
-   private AddGuest(){    
+   private AddGuest(){  
+    if(!this.newGuest.name || !this.newGuest.peopleId || !this.newGuest.mailAddress ){
+      this.errorAdd = true;
+      this.message = 'נא מלא את כל השדות';
+      return false;
+    }  
     this.newGuest;
     this.newPartyType;
     

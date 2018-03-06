@@ -15,6 +15,10 @@ export class EventsComponent implements OnInit {
  private newEvents: Events = new Events();
  private newInviter:People = new People();
  private stringName:string='';
+ private errorAdd: boolean = false;
+ private success:boolean = false;
+ private message: string = '';
+ 
   constructor(private partyService: PartyService, private router: Router) { }
 
   ngOnInit() {
@@ -23,7 +27,14 @@ export class EventsComponent implements OnInit {
     this.stringName=this.newInviter.name;
   }
 
-  private AddEvent(){    
+  private AddEvent(){   
+    if(!this.newEvents.Name|| !this.newEvents.Place || !this.newEvents.Name){
+      this.errorAdd = true;
+      this.message = 'נא מלא את כל השדות';
+      return false;
+    }
+     
+
     this.partyService.AddEvent(this.newEvents).then(()=>{
       this.router.navigate(['menu']); 
       });

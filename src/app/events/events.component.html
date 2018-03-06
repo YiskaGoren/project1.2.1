@@ -5,19 +5,32 @@
   <p dir="rtl">
   <label>
    שם המסיבה:
-    <input class="form-control"  type="text" [(ngModel)]="newEvents.name" name="name"/>
+    <input  class="form-control"  type="text" [(ngModel)]="newEvents.name" name="name" placeholder="שם מסיבה"
+    #userName="ngModel"
+    minlength="2"
+    maxlength="30"
+    required/>
   </label>
   </p >
+  <div *ngIf="userName.errors?.required && userName.touched" class="alert alert-danger">
+      שם  מסיבה חובה 
+  
+      </div>
+      <div *ngIf="userName.errors?.minlength && userName.touched" class="alert alert-danger">
+        נא הכנס שם תקין
+       </div>
+
+
   <p dir="rtl">
       <label>
       כתובת:
-        <input class="form-control"  type="text" [(ngModel)]="newEvents.place" name="place"/>
+        <input class="form-control"  type="text" [(ngModel)]="newEvents.place" name="place"  placeholder="כתובת"  />
       </label>
       </p >
   <p dir="rtl">
   <label>
    מספר מוזמנים:
-    <input class="form-control"  type="number" [(ngModel)]="newEvents.numTakePart" name="numTakePart"/>
+    <input class="form-control"  type="number" [(ngModel)]="newEvents.numTakePart" name="numTakePart"  placeholder="מספר מוזמנים"/>
   </label>
   </p >
   
